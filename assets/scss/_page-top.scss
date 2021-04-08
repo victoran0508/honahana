@@ -64,165 +64,92 @@
 }
 
 .page-footer {
-	.container {
-		@media (max-width: 1280px) {
-	    	padding: 0 30px;
-	    }
-	}
+	height: 240px;
+	background: center url('../img/banner.jpeg') no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    color: white;
 
-	.footer-top {
-		background: url(../img/footer_bg.jpg) center no-repeat;
-		background-size: cover;
-		color: #fff;
-		padding-top: 100px;
-
-		h2 {
-			font-size: 30px;
-			margin-bottom: 65px;
-			line-height: 1.7;
-		}
-
-		.contact-info {
-		    width: 555px;
-		    max-width: 100%;
-		    display: flex;
-		    align-items: center;
-		    justify-content: center;
-		    height: 98px;
-		    border: 1px solid #fff;
-		    background-color: #03143c;
-		    margin-bottom: 50px;
-		    font-size: 22px;
-		    line-height: 1;
-		    color: inherit;
-
-		    i {
-		    	margin-right: 30px;
-		    }
-
-		    .phone-number {
-		    	font-size: 28px;
-		    	display: block;
-		    	padding-right: 100px;
-
-		    	~ span {
-		    		font-size: 14px;
-		    	}
-		    }
-		}
-	}
-
-	.footer-middle {
-	    margin-top: 85px;
-	    background-color: rgba(3,20,60,0.6);
-	    padding: 55px 0;
-	}
-
-	.footer-bottom {
-		padding: 60px 0 20px;
-
-		.footer-logo {
-			margin-bottom: 25px;
-		}
-
-		p {
-			font-size: 16px;
-			line-height: 2;
-
-			&.copyright {
-				font-size: 15px;
-				background: transparent;
-    			color: inherit;
+	.left-navi {
+		position: absolute;
+		left: 60px;
+		bottom: 75px;
+		.navi-list {
+			span {
+                display: block;
+                font: 14px/2 "Baskerville";
 			}
 		}
 	}
-}
 
-.footer-links {
-	list-style: none;
-    display: flex;
-    justify-content: space-evenly;
+	.about {
+		position: absolute;
+		left: 50%;
+		bottom: 30px;
+        @include transform(translateX(-50%));
+        text-align: center;
 
-	> li {
-		max-width: 105px;
-    	white-space: nowrap;
-	}
-
-	ul {
-		list-style: none;
-		padding: 0;
-	    position: relative;
-	    z-index: 2;
-	    margin-top: 20px;
-	}
-
-	a {
-	    line-height: 32px;
-	    color: inherit;
-	}
-}
-
-@media (max-width: 1024px) {
-	.page-footer {
-	    text-align: center;
-
-	    .container {
-		    padding: 0 97px;
-		}
-
-		.footer-top {
-			padding-bottom: 100px;
-
-			.contact-info {
-			    margin-left: auto;
-			    margin-right: auto;
-			    text-align: left;
+		.company {
+			font: 12px / 1.5 "Baskerville";
+			span {
+                font: 42px / 1.2 "Baskerville";
+                display: block;
 			}
 		}
 
-		.footer-middle {
-		    display: none;
-		}
+		.link-buttons {
+			@include display-flex;
+			@include justify-content-center;
+			@include align-items-center;
+			margin-top: 1em;
+			margin-bottom: 1em;
 
-		.footer-bottom {
-			text-align: left;
-			padding: 180px 0 50px;
-
-			p {
-			    font-size: 24px;
-			    line-height: 1.5;
-
-			    &:not(:last-child) {
-			    	margin: 20px 0;
-			    }
-
-			    span {
-			    	display: block;
-			    }
-
-			    &.copyright {
-				    font-size: 20px;
+			.link-to-instagram {
+				cursor: pointer;
+				img {
+					height: 1.2em;
+				}
+			}
+			.link-to-contact {
+				cursor: pointer;
+				margin-left: 1em;
+				img {
+				    height: 1em;
 				}
 			}
 		}
-	}
-}
 
-@media (max-width: 749px) {
-	.page-footer {
-		.container {
-	    	padding: 0 30px;
-	    }
-
-	    .footer-top .contact-info .phone-number {
-		    padding: 0;
+		.copyright {
+            font: 11px / 1.75 Baskerville;
 		}
 	}
-}
 
-@media (max-width: 575px) {
-	.page-footer .footer-top .contact-info {
-	    padding: 15px;
-	    height: auto;
+	.scroll-to-top {
+		@extend .vertical-writing;
+		font: 13px Baskerville;
+		position: absolute;
+		right: 60px;
+		top: calc(50% + 2.5em);
+		@include transform(translateY(-50%));
+		cursor: pointer;
+        
+        &:before {
+        	content: "";
+        	display: block;
+        	position: absolute;
+        	height: 4em;
+        	top: -5em;
+        	width: 0.4em;
+        	left: 50%;
+        	@include transform(translateX(-50%) skewY(-45deg));
+        	border-right: 1px solid white;
+        	border-top: 1px solid white;
+        	@include transition-all;
+        }
+
+        &:hover:before {
+        	top: -6em;
+        }
 	}
 }
