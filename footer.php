@@ -12,8 +12,8 @@
                 flower atelier
             </p>
             <p class="link-buttons">
-                <a class="link-to-instagram" href="https://instagram.com/honahana"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/instagram.svg"></a>
-                <a class="link-to-contact" href="<?php home_url(); ?>/contact"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/envelope.svg"></a>
+                <a class="link-to-instagram" href="https://instagram.com/honahana"><img class="img" src="<?php echo get_template_directory_uri(); ?>/assets/img/instagram.svg"></a>
+                <a class="link-to-contact" href="<?php home_url(); ?>/contact"><img class="img" src="<?php echo get_template_directory_uri(); ?>/assets/img/envelope.svg"></a>
             </p>
             <p class="copyright">Copyright© flower atelier hona hana All rights reserved.</p>
         </div>

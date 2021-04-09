@@ -8,8 +8,14 @@
     @include flex-center-v;
 
     a.contact {
-		img {
+		.img {
 			height: 1em;
+			width: 2em;
+		}
+
+		object {
+			height: 1em;
+			vertical-align: middle;
 		}
 	}
 }

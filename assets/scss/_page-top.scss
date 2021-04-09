@@ -65,16 +65,17 @@
 
 .page-footer {
 	height: 240px;
-	@media only screen and (max-width: 768px) {
-		height: 96vw;
-	}
 	letter-spacing: 0.1em;
 	background: url('../img/banner.jpeg') no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-position: center top;
+    background-position: center center;
     position: relative;
     color: white;
+	@media only screen and (max-width: 768px) {
+		height: 96vw;
+		background-attachment: scroll;
+	}
 
 	.left-navi {
 		position: absolute;
@@ -134,15 +135,26 @@
 
 			.link-to-instagram {
 				cursor: pointer;
-				img {
+				.img {
 					height: 1.2em;
+					vertical-align: middle;
+
+					.cls-1 {
+						stroke-width: 1px;
+					}
 				}
 			}
 			.link-to-contact {
 				cursor: pointer;
 				margin-left: 1em;
-				img {
+				.img {
 				    height: 1em;
+				    width: 2em;
+				    vertical-align: middle;
+
+				    .cls-1 {
+						stroke-width: 2px;
+					}
 				}
 			}
 		}
@@ -158,7 +170,7 @@
 
 	.scroll-to-top {
 		@extend .vertical-writing;
-		font: 13px Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+		font: italic 13px Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
 		position: absolute;
 		right: 60px;
 		top: calc(50% + 2.5em);

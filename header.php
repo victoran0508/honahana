@@ -30,7 +30,7 @@
                     <li><a href="/bridal">Bridal</a></li>
                     <li><a href="/about">About</a></li>
                     <li><a href="/news">News</a></li>
-                    <li><a href="/contact" class="contact"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/envelope.svg" alt="" /></a></li>
+                    <li><a href="/contact" class="contact"><img class="img" src="<?php echo get_template_directory_uri(); ?>/assets/img/envelope.svg" alt="" /></a></li>
                 </ul>
             </div>
         </div>

@@ -79,10 +79,10 @@
 	letter-spacing: 0.1em;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1080px) {
 	.section:not(.section--hero) {
-	    padding-left: 30px;
-	    padding-right: 30px;
+	    padding-left: 2vw;
+	    padding-right: 2vw;
 	}
 }
 
@@ -291,21 +291,21 @@
 		&:after {
 			content: "";
 			position: absolute;
-			right: calc(-1em - 100%);
+			right: -1em;
 			top: 50%;
 			width: 4em;
 			height: 0.4em;
 			border-right: 1px solid #1A1A1A;
 			border-bottom: 1px solid #1A1A1A;
 			@include transform(skewX(45deg));
-			@include transform(translateY(-50%) skewX(45deg));
+			@include transform(translate(100%, -50%) skewX(45deg));
 			@include transition-all;
 		}
 
 		&:hover {
 			opacity: 0.6;
 			&:after {
-				right: calc(-2.5em - 100%);
+				right: -3em;
 			}
 		}
 	}
@@ -322,12 +322,28 @@
 		}
 
 		.section-title {
-			padding-left: 100px;
-			@media only screen and (max-width: 768px) {
-				padding-left: unset;
-            }
-            font: 14px/1.5 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+			margin-left: 100px;
+			@media only screen and (max-width: 1080px) {
+				margin-left: 5vw;
+			}
+			font: 14px/1.5 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
             margin-bottom: 40px;
+            position: relative;
+            @media only screen and (max-width: 768px) {
+				margin-left: unset;
+				font-size: 3.73vw;
+				margin-bottom: 7vw;
+            }
+            &:after {
+            	content: "";
+            	position: absolute;
+            	display: block;
+            	left: 5em;
+            	width: 3em;
+            	top: 0.8em;
+            	height: 1px;
+            	background-color: #1A1A1A;
+            }
 		}
 
 		.section-content {
@@ -341,6 +357,9 @@
 				@extend .no-select;
                 position: absolute;
                 left: 160px;
+				@media only screen and (max-width: 1080px) {
+					left: 12vw;
+				}
                 top: 0;
                 color: #1A1A1A;
                 height: 100%;
@@ -475,7 +494,7 @@
 					}
 
 					.header__text {
-						margin-left: 65px;
+						margin-left: 4vw;
 						@media only screen and (max-width: 768px) {
 							margin-left: unset;
 							width: 80vw;
@@ -485,6 +504,13 @@
 						.title {
 							@include display-flex;
 							@include justify-content-space-between;
+							padding-right: 100px;
+							@media only screen and (max-width: 1080px) {
+								padding-right: 5vw;
+							}
+							@media only screen and (max-width: 768px) {
+								padding-right: unset;
+							}
 
 							.title__panel {
 								position: relative;
@@ -493,16 +519,16 @@
 									position: relative;
 									transform: translateX(45px);
 									height: 90px;
-									left: -0.5em;
+									left: -1.5em;
 									.char {
-										font: 20px monospace;
-										height: 60px;
+										font: 14px monospace;
+										height: 40px;
 										position: absolute;
-										width: 13px;
+										width: 8px;
 										@media only screen and (max-width: 768px) {
-											font-size: 3vw;
-											width: 2vw;
-											height: 10vw;
+											font-size: 2vw;
+											width: 1vw;
+											height: 6vw;
 										}
 										left: 0;
 										top: 0;
@@ -543,9 +569,9 @@
 										content: "";
 										position: absolute;
 										display: block;
-										width: 14px;
+										width: 1em;
 										top: 33px;
-										left: 0.5em;
+										left: 0.3em;
 										height: 1px;
 										background-color: #1a1a1a;
 										@include transform(translateX(-50%));
@@ -578,9 +604,9 @@
 									@extend .vertical-writing;
 									font: 13px "Noto Serif JP";
 									letter-spacing: 0.3em;
-									position: absolute;
+// 									position: absolute;
 									top: 1em ;
-									right: 100px;
+// 									right: 100px;
 									@media only screen and (max-width: 768px) {
 										font-size: 3.2vw;
 										right: 1em;
@@ -635,6 +661,10 @@
 					.row {
 						padding-left: 100px;
 						padding-right: 100px;
+						@media only screen and (max-width: 1080px) {
+							padding-left: 5vw;
+							padding-right: 5vw;
+						}
 
 						.gallery-wrapper {
 							position: relative;
@@ -721,6 +751,11 @@
 									bottom: 0;
 									width: calc(100px + 12%);
 									height: 83%;
+
+									@media only screen and (max-width: 1080px) {
+										right: -5vw;
+										width: calc(5vw + 12%);
+									}
 								}
 							}
 						}
@@ -902,7 +937,15 @@
 							}
 
 							.title {
-								@include flex-direction-row-reverse;
+								padding-left: 100px;
+                                padding-right: unset;
+								@media only screen and (max-width: 1080px) {
+									padding-left: 5vw;
+								}
+                                @media only screen and (max-width: 768px) {
+								    @include flex-direction-row-reverse;
+								    padding-left: unset;
+								}
 								.title__panel.title__panel--left {
 // 									margin-right: 60px;
 									@media only screen and (max-width: 768px) {
@@ -914,11 +957,13 @@
 								}
 
 								.service-name {
-									right: 100px;
+// 									right: 100px;
+                                    margin-right: 2em;
 									@media only screen and (max-width: 768px) {
 										left: unset;
+										margin-right: unset;
 									}
-									right: 1em;
+// 									right: 1em;
 								}
 							}
 						}
@@ -994,10 +1039,10 @@
 
 		.section-content {
 			padding-left: 80px;
+			overflow: hidden;
 			@media only screen and (max-width: 768px) {
 				padding-left: 8vw;
 			}
-			overflow: hidden;
             @include flex(1 1 auto);
 
 			.news {
@@ -1064,7 +1109,7 @@
 					
 					.link {
 						position: relative;
-						left: -5em;
+						left: -7.5em;
 					}
 
 					@media only screen and (max-width: 768px) {
@@ -1116,16 +1161,35 @@
                             top: 10px;
                             right: 10px;
                             bottom: 10px;
+                            @media only screen and (max-width: 768px) {
+                            	left: 1.3vw;
+								top: 1.3vw;
+								right: 1.3vw;
+								bottom: 1.3vw;
+                            }
                             border: 1px solid white;
 						}
 
 						.menu-link {
                             position: absolute;
                             display: block;
-							background: #333;
-							opacity: 0.3;
+// 							background: #333;
+// 							opacity: 0.3;
 							z-index: 3;
 							@include transition-all;
+							left: 0;
+							top: 0;
+							right: 0;
+							bottom: 0;
+
+							&:after {
+								content: "";
+								position: absolute;
+								display: block;
+								@include transition-all;
+								background: #333;
+    							opacity: 0.3;
+							}
 						}
 
 						.img {
@@ -1137,13 +1201,13 @@
 							@media only screen and (max-width: 768px) {
 								background: center url(../img/frame-flower-art.png)
 							}
-							.menu-link {
+							.menu-link:after {
 								left: 0;
 								right: 0;
 								top: 0;
 								height: 0;
 							}
-							&:hover .menu-link {
+							&:hover .menu-link:after {
 								height: 100%;
 							}
 							.img {
@@ -1158,13 +1222,13 @@
 							@media only screen and (max-width: 768px) {
 								background: center url(../img/lesson.jpeg)
 							}
-							.menu-link {
+							.menu-link:after {
 								left: 0;
 								top: 0;
 								bottom: 0;
 								width: 0;
 							}
-							&:hover .menu-link {
+							&:hover .menu-link:after {
 								width: 100%;
 							}
 							.img {
@@ -1179,13 +1243,13 @@
 							@media only screen and (max-width: 768px) {
 								background: center url(../img/workshop.jpeg)
 							}
-							.menu-link {
+							.menu-link:after {
 								right: 0;
 								top: 0;
 								bottom: 0;
 								width: 0;
 							}
-							&:hover .menu-link {
+							&:hover .menu-link:after {
 								width: 100%;
 							}
 							.img {
@@ -1200,13 +1264,13 @@
 							@media only screen and (max-width: 768px) {
 								background: center url(../img/dried-flower-kit.jpeg)
 							}
-							.menu-link {
+							.menu-link:after {
 								left: 0;
 								right: 0;
 								bottom: 0;
 								height: 0;
 							}
-							&:hover .menu-link {
+							&:hover .menu-link:after {
 								height: 100%;
 							}
 							.img {
@@ -1382,7 +1446,7 @@
 						width: 3em;
 						left: 50%;
 						@include transform(translateX(-50%));
-						top: 3em;
+						top: 2.8em;
 						bottom: unset;
 					}
 				}
@@ -1396,8 +1460,10 @@
 			}
 
 			.view-more {
-				position: relative;
-				left: -3em;
+				@media only screen and (max-width: 768px) {
+					position: relative;
+					left: -3em;
+				}
 			}
 		}
 
