@@ -44,4 +44,16 @@ jQuery(function($){
 			$(this).removeClass('opened');
 		}
 	});
+
+	$('.scroll-to-top').on('click',function(e){
+		$("html,body").animate({scrollTop:0}, 1000);
+		e.preventDefault();
+		return false;
+	});
+	
+	$('.scroll-to-top').on('touchstart',function(e){
+		$("html,body").animate({scrollTop:0}, 1000);
+		e.preventDefault();
+		return false;
+	});
 });

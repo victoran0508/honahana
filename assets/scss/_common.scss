@@ -76,12 +76,21 @@
 
 .section:not(.section--hero) {
 	padding-top: 100px;
+	letter-spacing: 0.1em;
 }
 
 @media (max-width: 1280px) {
 	.section:not(.section--hero) {
 	    padding-left: 30px;
 	    padding-right: 30px;
+	}
+}
+
+@media (max-width: 768px) {
+	.section:not(.section--hero) {
+		padding-top: 10vw;
+	    padding-left: 5.33vw;
+	    padding-right: 5.33vw;
 	}
 }
 
@@ -143,7 +152,7 @@
 	top: 0;
 	bottom: 0;
     z-index: 1;
-	font-family: "Noto Serif CJK JP";
+	font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
 
 	h1 {
 		cursor: default;
@@ -268,8 +277,13 @@
 }
 
 .view-more {
-	font: 14px/2 "Baskerville";
+	font: 14px/2 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+	font-weight: 700;
 	margin-top: 3.5em;
+	@media only screen and (max-width: 768px) {
+		font-size: 3.73vw;
+		margin-top: 2em;
+	}
 
 	.link {
 		position: relative;
@@ -303,23 +317,37 @@
 		margin-left: auto;
 		margin-right: auto;
 		padding-top: 100px;
+		@media only screen and (max-width: 768px) {
+			padding-top: 8vw;
+		}
 
 		.section-title {
 			padding-left: 100px;
-            font: 14px/1.5 "Baskerville";
+			@media only screen and (max-width: 768px) {
+				padding-left: unset;
+            }
+            font: 14px/1.5 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
             margin-bottom: 40px;
 		}
 
 		.section-content {
 			position: relative;
 			height: 320px;
+			@media only screen and (max-width: 768px) {
+				height: 170vw;
+			}
 
 			.section-content__heading {
+				@extend .no-select;
                 position: absolute;
                 left: 160px;
                 top: 0;
                 color: #1A1A1A;
-                height: 320px;
+                height: 100%;
+                @media only screen and (max-width: 768px) {
+                	left: 10vw;
+                	height: 50%;
+                }
                 z-index: 1;
                 @include display-flex;
                 @include align-items-center;
@@ -328,6 +356,9 @@
                     h2 {
 						@extend .vertical-writing;
                         font: 44px "Noto Serif JP";
+                        @media only screen and (max-width: 768px) {
+							font-size: 12vw;
+						}
                         font-weight: 700;
                         text-align: center;
                         position: relative;
@@ -339,6 +370,11 @@
                 	margin-left: 60px;
                 	mark {
                         font: 15px/3 "Noto Serif JP";
+                        @media only screen and (max-width: 768px) {
+							font-size: 3.2vw;
+							line-height: 2.5;
+						}
+                        font-weight: 600;
                         background-color: white;
                         letter-spacing: 0.1em;
                 	}
@@ -346,11 +382,18 @@
 			}
 
 			.section-content__image {
-				height: 320px;
+				height: 100%;
 				width: 500px;
 				position: absolute;
 				right: 0;
 				top: 0;
+				@media only screen and (max-width: 768px) {
+					left: 0;
+					right: -5.33vw;
+					height: 50%;
+					top: 50%;
+					width: unset;
+				}
 				@include display-flex;
 				@include justify-content-center;
 				@include align-items-center;
@@ -369,16 +412,26 @@
             h2 {
             	position: relative;
             	text-align: center;
-            	font: 13px / 1.5 Baskerville;
+            	font: 13px / 1.5 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+		        @media only screen and (max-width: 768px) {
+		        	font-size: 2.66vw;
+                }
+
                 span {
                 	display: block;
-                    font: 51px / 1.5 Baskerville;
+                    font: 51px / 1.5 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+                    @media only screen and (max-width: 768px) {
+						font-size: 10.66vw;
+					}
                     letter-spacing: 0.1em;
                     margin-top: 0.4em;
                     position: relative;
 //                     background: center -7em center url(../img/header-decorator.png) no-repeat, center 7em center url(../img/header-decorator.png) no-repeat;
                     background: url(../img/header-decorator-right.png) no-repeat, url(../img/header-decorator-left.png) no-repeat;
                     background-position: calc(50% + 4em) 50%, calc(50% - 4em) 50%;
+                    @media only screen and (max-width: 768px) {
+						background-position: calc(50% + 3.3em) 50%, calc(50% - 3.3em) 50%;
+					}
                 }
 
                 &:after {
@@ -400,6 +453,10 @@
 					height: 350px;
 					@include display-flex;
 					@include align-items-center;
+					@media only screen and (max-width: 768px) {
+						height: 136vw;
+						@include flex-direction-column;
+					}
 
 					.header__image {
 						height: 100%;
@@ -410,10 +467,20 @@
 						.img {
 							width: 100%;
 						}
+						@media only screen and (max-width: 768px) {
+							margin-left: -5.33vw;
+							width: unset;
+							height: 50vw;
+						}
 					}
 
 					.header__text {
 						margin-left: 65px;
+						@media only screen and (max-width: 768px) {
+							margin-left: unset;
+							width: 80vw;
+							margin-top: 5vw;
+						}
 						@include flex(1 1 auto);
 						.title {
 							@include display-flex;
@@ -426,11 +493,17 @@
 									position: relative;
 									transform: translateX(45px);
 									height: 90px;
+									left: -0.5em;
 									.char {
 										font: 20px monospace;
 										height: 60px;
 										position: absolute;
 										width: 13px;
+										@media only screen and (max-width: 768px) {
+											font-size: 3vw;
+											width: 2vw;
+											height: 10vw;
+										}
 										left: 0;
 										top: 0;
 										transform-origin: bottom center;
@@ -458,10 +531,13 @@
 										}
 									}
 									.service-index {
-										font: 60px / 1 Baskerville;
+										font: 60px / 1 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+										@media only screen and (max-width: 768px) {
+											font-size: 8vw;
+										}
 										position: absolute;
 										top: 40px;
-										left: -0.5em;
+										left: -0.4em;
 									}
 									&:after {
 										content: "";
@@ -478,8 +554,24 @@
 								
 								h3 {
 									margin-top: 1em;
-									font: 36px / 1.2 Baskerville;
+									font: 36px / 1.2 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+									@media only screen and (max-width: 768px) {
+										margin-top: unset;
+										font-size: 9.6vw;
+									}
 									margin-bottom: 0.4em;
+									position: relative;
+
+									&:after {
+										content: "";
+										position: absolute;
+										display: block;
+										width: 52px;
+										bottom: -0.3em;
+										height: 1px;
+										left: 0;
+										background-color: #1A1A1A;
+									}
 								}
 
 								.service-name {
@@ -489,17 +581,10 @@
 									position: absolute;
 									top: 1em ;
 									right: 100px;
-								}
-
-								&:after {
-									content: "";
-									position: absolute;
-									display: block;
-									width: 52px;
-									bottom: 0;
-									height: 1px;
-									left: 0;
-									background-color: #1A1A1A;
+									@media only screen and (max-width: 768px) {
+										font-size: 3.2vw;
+										right: 1em;
+									}
 								}
 							}
 						}
@@ -507,6 +592,9 @@
 						.description {
 							p {
 								font: 12px/2 "Noto Serif JP";
+								@media only screen and (max-width: 768px) {
+									font-size: 3.2vw;
+								}
 								margin-top: 2em;
 							}
 						}
@@ -555,10 +643,10 @@
 							.service-header {
 								h3 {
 									@extend .vertical-writing;
-									font: 13px / 1.6 Baskerville;
+									font: 13px / 1.6 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
 									span {
 										@extend .vertical-writing;
-										font: 36px / 1.5 Baskerville;
+										font: 36px / 1.5 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
 										display: block;
 									}
 								}
@@ -639,9 +727,150 @@
 					}
 				}
 
+				@media only screen and (max-width: 768px) {
+					.contents {
+						margin-top: 10vw;
+						position: relative;
+						margin-bottom: 10vw;
+						margin-left: -5.33vw;
+						margin-right: -5.33vw;
+						height: 210vw;
+
+						&:before, &:after {
+							content: "";
+							display: block;
+							position: absolute;
+							background-color: #FAF7F2;
+							z-index: -1;
+						}
+
+						&:before {
+							right: 0;
+							top: 0;
+							width: 20vw;
+							height: 46vw;
+							left: auto;
+						}
+
+						&:after {
+							left: 0;
+							right: unset;
+							top: 13.3vw;
+							width: 50vw;
+							height: 50vw;
+						}
+
+						.row {
+							position: absolute;
+							left: 0;
+							top: 0;
+							width: 100%;
+							height: 100%;
+							padding-left: unset;
+							padding-right: unset;
+
+							.gallery-wrapper {
+								position: absolute;
+								height: 100%;
+								width: 100%;
+
+								.service-header {
+									h3 {
+										@extend .vertical-writing;
+										font: 2.66vw / 1.6 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+										span {
+											@extend .vertical-writing;
+											font: 10vw / 1.5 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+											display: block;
+										}
+									    position: absolute;
+									    left: 10vw;
+									    top: 20vw;
+									}
+								}
+
+								.gallery {
+									position: absolute;
+
+									&.gallery--01 {
+										right: 5vw;
+										left: auto;
+										top: 2.4vw;
+										height: 51vw;
+										width: 51vw;
+									}
+
+									&.gallery--02 {
+										left: 20vw;
+										top: 56.4vw;
+										height: 40vw;
+										width: 40vw;
+									}
+
+									&.gallery--03 {
+										right: 5vw;
+										top: 95vw;
+										height: 29.3vw;
+										width: 29.3vw;
+									}
+
+									&.gallery--04 {
+										right: unset;
+										left: 0;
+										top: 110vw;
+										height: 52vw;
+										width: 52vw;
+									}
+
+									&.gallery--05 {
+										left: unset;
+										right: 1vw;
+										top: 150vw;
+										height: 42.4vw;
+										width: 42.4vw;
+									}
+
+									&.gallery--06 {
+										left: 10vw;
+										top: 175vw;
+										height: 29.3vw;
+										width: 26.6vw;
+									}
+								}
+							}
+
+							&:nth-of-type(2) {
+								.gallery-wrapper {
+									&:before, &:after {
+										content: "";
+										display: block;
+										position: absolute;
+										background-color: #FAF7F2;
+										z-index: -1;
+									}
+
+									&:before {
+										left: 13.3vw;
+										top: 90vw;
+										width: 58vw;
+										height: 56vw;
+									}
+
+									&:after {
+										right: 10vw;
+										bottom: 0;
+										width: 56vw;
+										height: 42.6vw;
+									}
+								}
+							}
+						}
+					}
+				}
+
 				&.service--flower-arrangement {
         			.header {
-						.header__text {
+        				.header__text {
 							.title {
 								.title__panel.title__panel--right:after {
 									display: none;
@@ -655,24 +884,51 @@
 					padding-top: 50px;
 					padding-bottom: 50px;
 					position: relative;
+					@media only screen and (max-width: 768px) {
+						padding-top: 8.4vw;
+						padding-bottom: 8.4vw;
+					}
 					
         			.header {
+        				@media only screen and (max-width: 768px) {
+        					@include flex-direction-column-reverse;
+        					height: 116vw;
+        				}
 						.header__text {
 							margin-right: 45px;
 							margin-left: unset;
+							@media only screen and (max-width: 768px) {
+								margin-right: unset;
+							}
 
 							.title {
+								@include flex-direction-row-reverse;
 								.title__panel.title__panel--left {
-									margin-right: 60px;
+// 									margin-right: 60px;
+									@media only screen and (max-width: 768px) {
+										margin-right: unset;
+									}
 								}
 								.title__panel.title__panel--left:after {
 									display: none;
 								}
 
 								.service-name {
-									left: 100px;
-									right: unset;
+									right: 100px;
+									@media only screen and (max-width: 768px) {
+										left: unset;
+									}
+									right: 1em;
 								}
+							}
+						}
+
+						.header__image {
+							@media only screen and (max-width: 768px) {
+								margin-left: unset;
+								margin-right: -5.33vw;
+								width: unset;
+								height: 50vw;
 							}
 						}
 					}
@@ -703,12 +959,21 @@
 			h2 {
 				@extend .vertical-writing;
 				position: relative;
+				letter-spacing: 0.1em;
+				font: 13px / 1.5 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+				@media only screen and (max-width: 768px) {
+					font-size: 2.66vw;
+				}
 
-				font: 13px / 1.5 Baskerville;
 			    span {
 			    	display: block;
-                    font: 51px / 1.5 Baskerville;
+                    font: 51px / 1.5 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
                     margin-right: 0.5em;
+                    @media only screen and (max-width: 768px) {
+						font-size: 10.66vw;
+						line-height: 1;
+						margin-right: 0.2em;
+					}
 			    }
 
 			    &:after {
@@ -716,6 +981,9 @@
 			    	display: block;
 			    	position: absolute;
 			    	right: 2.7em;
+			    	@media only screen and (max-width: 768px) {
+			    		right: 1.8em;
+			    	}
 			    	top: 0;
 			    	height: 50px;
 			    	width: 1px;
@@ -726,6 +994,9 @@
 
 		.section-content {
 			padding-left: 80px;
+			@media only screen and (max-width: 768px) {
+				padding-left: 8vw;
+			}
 			overflow: hidden;
             @include flex(1 1 auto);
 
@@ -736,15 +1007,39 @@
 						padding: .5em 1em;
 						border-top: 1px solid #1A1A1A;
 						@include display-flex;
+						@media only screen and (max-width: 768px) {
+							font-size: 3.2vw;
+							@include flex-direction-column;
+						}
 
 						&:last-of-type {
 							border-bottom: 1px solid #1A1A1A;
 						}
 
 						.datetime {
+							font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+							line-height: 3;
 							@include flex(0 0 5em);
 							padding-right: 2em;
 							border-right: 1px solid #1A1A1A;
+							@media only screen and (max-width: 768px) {
+								line-height: 2;
+								border-right: unset;
+								padding-right: unset;
+								@include flex(none);
+								padding-bottom: 3vw;
+								position: relative;
+								&:after {
+									content: "";
+                                    position: absolute;
+                                    display: block;
+                                    bottom: 1.5vw;
+                                    left: 0;
+                                    width: 3em;
+                                    height: 1px;
+                                    background-color: #1A1A1A;
+								}
+							}
 						}
 
 						.news-title {
@@ -753,16 +1048,30 @@
 							overflow: hidden;
 							text-overflow: ellipsis;
 							padding-left: 2em;
+							@media only screen and (max-width: 768px) {
+								font-size: 3.73vw;
+								line-height: 1.5;
+								padding-left: unset;
+								white-space: normal;
+								text-overflow: unset;
+							}
 						}
 					}
 				}
 
 				.view-more {
 					text-align: right;
-
+					
 					.link {
 						position: relative;
 						left: -5em;
+					}
+
+					@media only screen and (max-width: 768px) {
+						text-align: left;
+						.link {
+							left: unset;
+						}
 					}
 				}
 			}
@@ -774,16 +1083,26 @@
 		margin-left: auto;
 		margin-right: auto;
 		padding-bottom: 100px;
+		@media only screen and (max-width: 768px) {
+			padding-bottom: 10vw;
+		}
 
 		.section-content {
 			.menus {
 				.row {
 					height: 250px;
+					@media only screen and (max-width: 768px) {
+						height: calc(37.3vw + 14vw);
+					}
 					@include display-flex;
 
 					.menu-item {
 						position: relative;
 						height: 100%;
+						@media only screen and (max-width: 768px) {
+							height: 37.3vw;
+							overflow: visible;
+						}
 						@extend .effect;
 						@extend .background-zoom;
 						
@@ -815,6 +1134,9 @@
 						position: relative;
 
 						&.menu-item--frame-flower-art {
+							@media only screen and (max-width: 768px) {
+								background: center url(../img/frame-flower-art.png)
+							}
 							.menu-link {
 								left: 0;
 								right: 0;
@@ -826,10 +1148,16 @@
 							}
 							.img {
 								@include transform(translateY(-24%));
+								@media only screen and (max-width: 768px) {
+									display: none;
+								}
 							}
 						}
 
 						&.menu-item--lesson {
+							@media only screen and (max-width: 768px) {
+								background: center url(../img/lesson.jpeg)
+							}
 							.menu-link {
 								left: 0;
 								top: 0;
@@ -841,10 +1169,16 @@
 							}
 							.img {
 								@include transform(translateY(-3%));
+								@media only screen and (max-width: 768px) {
+									display: none;
+								}
 							}
 						}
 
 						&.menu-item--workshop {
+							@media only screen and (max-width: 768px) {
+								background: center url(../img/workshop.jpeg)
+							}
 							.menu-link {
 								right: 0;
 								top: 0;
@@ -856,10 +1190,16 @@
 							}
 							.img {
 								@include transform(translateY(-24%));
+								@media only screen and (max-width: 768px) {
+									display: none;
+								}
 							}
 						}
 
 						&.menu-item--dried-flower-kit {
+							@media only screen and (max-width: 768px) {
+								background: center url(../img/dried-flower-kit.jpeg)
+							}
 							.menu-link {
 								left: 0;
 								right: 0;
@@ -871,6 +1211,9 @@
 							}
 							.img {
 								@include transform(translateY(-50%));
+								@media only screen and (max-width: 768px) {
+									display: none;
+								}
 							}
 						}
 
@@ -888,13 +1231,20 @@
 							text-align: center;
 
 							.menu__title-en {
-								font: 40px / 1.2 Baskerville;
+								font: 40px / 1.2 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+								@media only screen and (max-width: 768px) {
+									font-size: 8vw;
+								}
+								white-space: nowrap;
 							}
 
 							.menu__title-jp {
 								font: 14px / 1.7 "Noto Serif JP";
 								padding-bottom: 2em;
 								position: relative;
+								@media only screen and (max-width: 768px) {
+									font-size: 3vw;
+								}
 
 								&:after {
 									content: "";
@@ -907,10 +1257,51 @@
                                     background-color: white;
                                     @include transform(translateX(-50%));
 								}
+
+								@media only screen and (max-width: 768px) {
+									padding-top: 2em;
+									padding-bottom: unset;
+
+									&:after {
+										content: "";
+										position: absolute;
+										display: block;
+										top: 1em;
+										left: 50%;
+										height: 1px;
+										width: 3em;
+										background-color: white;
+										@include transform(translateX(-50%));
+									}
+								}
 							}
 
 							.menu__description {
 								font: 13px / 1.7 "Noto Serif JP";
+								@media only screen and (max-width: 768px) {
+									display: none;
+								}
+							}
+						}
+
+						.menu-description-sp {
+							display: none;
+							@media only screen and (max-width: 768px) {
+								@include display-flex;
+								@include align-items-center;
+								@include justify-content-center;
+								position: absolute;
+							    top: 37.3vw;
+							    height: 14vw;
+							    left: 0;
+							    right: 0;
+							    background-color: #999999;
+
+							    p {
+									font: 2.66vw / 1.7 "Noto Serif JP";
+									text-align: center;
+									color: white;
+							    }
 							}
 						}
 					}
@@ -933,6 +1324,12 @@
 		@include display-flex;
 		@include align-items-center;
 		position: relative;
+		@media only screen and (max-width: 768px) {
+			height: auto;
+			padding-top: 10vw;
+			padding-bottom: 10vw;
+			@include flex-direction-column;
+		}
 
 		&:after {
             content: "";
@@ -948,14 +1345,27 @@
 
 		.section-title {
 			letter-spacing: 0.1em;
+			@media only screen and (max-width: 768px) {
+				text-align: center;
+			}
 			.shop-name {
 				position: relative;
-				font: 13px / 1.5 "Baskerville";
+				font: 13px / 1.5 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+				@media only screen and (max-width: 768px) {
+					font-size: 2.66vw;
+				}
 
 				span {
-                    font: 60px / 1 "Baskerville";
+                    font: 60px / 1 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+                    @media only screen and (max-width: 768px) {
+						font-size: 12vw;
+					}
                     display: block;
                     padding-bottom: 0.5em;
+                    @media only screen and (max-width: 768px) {
+						padding-bottom: unset;
+						padding-top: 0.5em;
+                    }
 				}
 
 				&:after {
@@ -967,11 +1377,27 @@
 					width: 50px;
 					height: 1px;
 					background-color: #1A1A1A;
+
+					@media only screen and (max-width: 768px) {
+						width: 3em;
+						left: 50%;
+						@include transform(translateX(-50%));
+						top: 3em;
+						bottom: unset;
+					}
 				}
 			}
 
 			.shop-info {
                 font: 14px / 1.7 "Noto Serif JP";
+                @media only screen and (max-width: 768px) {
+					font-size: 2.66vw;
+				}
+			}
+
+			.view-more {
+				position: relative;
+				left: -3em;
 			}
 		}
 
@@ -981,6 +1407,15 @@
 			background: center center url(../img/access.png) no-repeat;
 			background-size: cover;
 			height: 100%;
+			@media only screen and (max-width: 768px) {
+				@include flex(none);
+				margin-left: -5.33vw;
+				margin-right: -5.33vw;
+				height: 40vw;
+				width: 100vw;
+				position: relative;
+				top: 10vw;
+			}
 		}
 	}
 }

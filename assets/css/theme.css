@@ -63,6 +63,25 @@ img {
   transform: scale(1.05);
 }
 
+.pc, .tb, .sp {
+  display: none;
+}
+
+@media screen and (min-width: 1025px) {
+  .pc {
+    display: block;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .tb {
+    display: block;
+  }
+}
+@media screen and (max-width: 768px) {
+  .sp {
+    display: block;
+  }
+}
 /* 共通のスタイル */
 .page-wrapper {
   max-width: 100%;
@@ -121,7 +140,7 @@ img {
   z-index: 1;
 }
 
-.no-select, .section.section--menus .section-content .menus .row .menu-item .menu {
+.no-select, .section.section--menus .section-content .menus .row .menu-item .menu, .section.section--concept .section-content .section-content__heading {
   -webkit-touch-callout: none;
   /* iOS Safari */
   -webkit-user-select: none;
@@ -143,12 +162,20 @@ img {
 
 .section:not(.section--hero) {
   padding-top: 100px;
+  letter-spacing: 0.1em;
 }
 
 @media (max-width: 1280px) {
   .section:not(.section--hero) {
     padding-left: 30px;
     padding-right: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .section:not(.section--hero) {
+    padding-top: 10vw;
+    padding-left: 5.33vw;
+    padding-right: 5.33vw;
   }
 }
 .section.section--hero {
@@ -240,7 +267,7 @@ img {
   top: 0;
   bottom: 0;
   z-index: 1;
-  font-family: "Noto Serif CJK JP";
+  font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
 }
 .hero-title h1 {
   cursor: default;
@@ -424,8 +451,15 @@ img {
 }
 
 .view-more {
-  font: 14px/2 "Baskerville";
+  font: 14px/2 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  font-weight: 700;
   margin-top: 3.5em;
+}
+@media only screen and (max-width: 768px) {
+  .view-more {
+    font-size: 3.73vw;
+    margin-top: 2em;
+  }
 }
 .view-more .link {
   position: relative;
@@ -462,21 +496,36 @@ img {
   margin-right: auto;
   padding-top: 100px;
 }
+@media only screen and (max-width: 768px) {
+  .section.section--concept {
+    padding-top: 8vw;
+  }
+}
 .section.section--concept .section-title {
   padding-left: 100px;
-  font: 14px/1.5 "Baskerville";
+  font: 14px/1.5 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   margin-bottom: 40px;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--concept .section-title {
+    padding-left: unset;
+  }
 }
 .section.section--concept .section-content {
   position: relative;
   height: 320px;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--concept .section-content {
+    height: 170vw;
+  }
 }
 .section.section--concept .section-content .section-content__heading {
   position: absolute;
   left: 160px;
   top: 0;
   color: #1A1A1A;
-  height: 320px;
+  height: 100%;
   z-index: 1;
   display: -webkit-box;
   display: -moz-box;
@@ -489,6 +538,12 @@ img {
   -webkit-align-items: center;
   align-items: center;
 }
+@media only screen and (max-width: 768px) {
+  .section.section--concept .section-content .section-content__heading {
+    left: 10vw;
+    height: 50%;
+  }
+}
 .section.section--concept .section-content .section-content__heading .title h2 {
   font: 44px "Noto Serif JP";
   font-weight: 700;
@@ -496,16 +551,28 @@ img {
   position: relative;
   top: 0.4em;
 }
+@media only screen and (max-width: 768px) {
+  .section.section--concept .section-content .section-content__heading .title h2 {
+    font-size: 12vw;
+  }
+}
 .section.section--concept .section-content .section-content__heading .content {
   margin-left: 60px;
 }
 .section.section--concept .section-content .section-content__heading .content mark {
   font: 15px/3 "Noto Serif JP";
+  font-weight: 600;
   background-color: white;
   letter-spacing: 0.1em;
 }
+@media only screen and (max-width: 768px) {
+  .section.section--concept .section-content .section-content__heading .content mark {
+    font-size: 3.2vw;
+    line-height: 2.5;
+  }
+}
 .section.section--concept .section-content .section-content__image {
-  height: 320px;
+  height: 100%;
   width: 500px;
   position: absolute;
   right: 0;
@@ -526,6 +593,15 @@ img {
   -webkit-align-items: center;
   align-items: center;
 }
+@media only screen and (max-width: 768px) {
+  .section.section--concept .section-content .section-content__image {
+    left: 0;
+    right: -5.33vw;
+    height: 50%;
+    top: 50%;
+    width: unset;
+  }
+}
 .section.section--service {
   max-width: 1080px;
   margin-left: auto;
@@ -537,16 +613,31 @@ img {
 .section.section--service .section-title h2 {
   position: relative;
   text-align: center;
-  font: 13px/1.5 Baskerville;
+  font: 13px/1.5 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--service .section-title h2 {
+    font-size: 2.66vw;
+  }
 }
 .section.section--service .section-title h2 span {
   display: block;
-  font: 51px/1.5 Baskerville;
+  font: 51px/1.5 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   letter-spacing: 0.1em;
   margin-top: 0.4em;
   position: relative;
   background: url(../img/header-decorator-right.png) no-repeat, url(../img/header-decorator-left.png) no-repeat;
   background-position: calc(50% + 4em) 50%, calc(50% - 4em) 50%;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--service .section-title h2 span {
+    font-size: 10.66vw;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .section.section--service .section-title h2 span {
+    background-position: calc(50% + 3.3em) 50%, calc(50% - 3.3em) 50%;
+  }
 }
 .section.section--service .section-title h2:after {
   content: "";
@@ -572,6 +663,18 @@ img {
   -webkit-align-items: center;
   align-items: center;
 }
+@media only screen and (max-width: 768px) {
+  .section.section--service .section-content .service .header {
+    height: 136vw;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
 .section.section--service .section-content .service .header .header__image {
   height: 100%;
   width: 650px;
@@ -594,6 +697,13 @@ img {
 .section.section--service .section-content .service .header .header__image .img {
   width: 100%;
 }
+@media only screen and (max-width: 768px) {
+  .section.section--service .section-content .service .header .header__image {
+    margin-left: -5.33vw;
+    width: unset;
+    height: 50vw;
+  }
+}
 .section.section--service .section-content .service .header .header__text {
   margin-left: 65px;
   -webkit-flex: 1 1 auto;
@@ -602,6 +712,13 @@ img {
   -moz-box-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--service .section-content .service .header .header__text {
+    margin-left: unset;
+    width: 80vw;
+    margin-top: 5vw;
+  }
 }
 .section.section--service .section-content .service .header .header__text .title {
   display: -webkit-box;
@@ -624,6 +741,7 @@ img {
   position: relative;
   transform: translateX(45px);
   height: 90px;
+  left: -0.5em;
 }
 .section.section--service .section-content .service .header .header__text .title .title__panel .text-circle .char {
   font: 20px monospace;
@@ -633,6 +751,13 @@ img {
   left: 0;
   top: 0;
   transform-origin: bottom center;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--service .section-content .service .header .header__text .title .title__panel .text-circle .char {
+    font-size: 3vw;
+    width: 2vw;
+    height: 10vw;
+  }
 }
 .section.section--service .section-content .service .header .header__text .title .title__panel .text-circle .char.char--1 {
   transform: rotate(-45deg);
@@ -656,10 +781,15 @@ img {
   transform: rotate(45deg);
 }
 .section.section--service .section-content .service .header .header__text .title .title__panel .text-circle .service-index {
-  font: 60px/1 Baskerville;
+  font: 60px/1 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   position: absolute;
   top: 40px;
-  left: -0.5em;
+  left: -0.4em;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--service .section-content .service .header .header__text .title .title__panel .text-circle .service-index {
+    font-size: 8vw;
+  }
 }
 .section.section--service .section-content .service .header .header__text .title .title__panel .text-circle:after {
   content: "";
@@ -676,8 +806,25 @@ img {
 }
 .section.section--service .section-content .service .header .header__text .title .title__panel h3 {
   margin-top: 1em;
-  font: 36px/1.2 Baskerville;
+  font: 36px/1.2 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   margin-bottom: 0.4em;
+  position: relative;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--service .section-content .service .header .header__text .title .title__panel h3 {
+    margin-top: unset;
+    font-size: 9.6vw;
+  }
+}
+.section.section--service .section-content .service .header .header__text .title .title__panel h3:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 52px;
+  bottom: -0.3em;
+  height: 1px;
+  left: 0;
+  background-color: #1A1A1A;
 }
 .section.section--service .section-content .service .header .header__text .title .title__panel .service-name {
   font: 13px "Noto Serif JP";
@@ -686,19 +833,20 @@ img {
   top: 1em;
   right: 100px;
 }
-.section.section--service .section-content .service .header .header__text .title .title__panel:after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 52px;
-  bottom: 0;
-  height: 1px;
-  left: 0;
-  background-color: #1A1A1A;
+@media only screen and (max-width: 768px) {
+  .section.section--service .section-content .service .header .header__text .title .title__panel .service-name {
+    font-size: 3.2vw;
+    right: 1em;
+  }
 }
 .section.section--service .section-content .service .header .header__text .description p {
   font: 12px/2 "Noto Serif JP";
   margin-top: 2em;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--service .section-content .service .header .header__text .description p {
+    font-size: 3.2vw;
+  }
 }
 .section.section--service .section-content .service .header .header__text .view-more {
   margin-top: 2em;
@@ -736,10 +884,10 @@ img {
   height: 300px;
 }
 .section.section--service .section-content .service .contents .row .gallery-wrapper .service-header h3 {
-  font: 13px/1.6 Baskerville;
+  font: 13px/1.6 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
 }
 .section.section--service .section-content .service .contents .row .gallery-wrapper .service-header h3 span {
-  font: 36px/1.5 Baskerville;
+  font: 36px/1.5 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   display: block;
 }
 .section.section--service .section-content .service .contents .row .gallery-wrapper .gallery {
@@ -800,6 +948,122 @@ img {
   width: calc(100px + 12%);
   height: 83%;
 }
+@media only screen and (max-width: 768px) {
+  .section.section--service .section-content .service .contents {
+    margin-top: 10vw;
+    position: relative;
+    margin-bottom: 10vw;
+    margin-left: -5.33vw;
+    margin-right: -5.33vw;
+    height: 210vw;
+  }
+  .section.section--service .section-content .service .contents:before, .section.section--service .section-content .service .contents:after {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: #FAF7F2;
+    z-index: -1;
+  }
+  .section.section--service .section-content .service .contents:before {
+    right: 0;
+    top: 0;
+    width: 20vw;
+    height: 46vw;
+    left: auto;
+  }
+  .section.section--service .section-content .service .contents:after {
+    left: 0;
+    right: unset;
+    top: 13.3vw;
+    width: 50vw;
+    height: 50vw;
+  }
+  .section.section--service .section-content .service .contents .row {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding-left: unset;
+    padding-right: unset;
+  }
+  .section.section--service .section-content .service .contents .row .gallery-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  .section.section--service .section-content .service .contents .row .gallery-wrapper .service-header h3 {
+    font: 2.66vw/1.6 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+    position: absolute;
+    left: 10vw;
+    top: 20vw;
+  }
+  .section.section--service .section-content .service .contents .row .gallery-wrapper .service-header h3 span {
+    font: 10vw/1.5 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+    display: block;
+  }
+  .section.section--service .section-content .service .contents .row .gallery-wrapper .gallery {
+    position: absolute;
+  }
+  .section.section--service .section-content .service .contents .row .gallery-wrapper .gallery.gallery--01 {
+    right: 5vw;
+    left: auto;
+    top: 2.4vw;
+    height: 51vw;
+    width: 51vw;
+  }
+  .section.section--service .section-content .service .contents .row .gallery-wrapper .gallery.gallery--02 {
+    left: 20vw;
+    top: 56.4vw;
+    height: 40vw;
+    width: 40vw;
+  }
+  .section.section--service .section-content .service .contents .row .gallery-wrapper .gallery.gallery--03 {
+    right: 5vw;
+    top: 95vw;
+    height: 29.3vw;
+    width: 29.3vw;
+  }
+  .section.section--service .section-content .service .contents .row .gallery-wrapper .gallery.gallery--04 {
+    right: unset;
+    left: 0;
+    top: 110vw;
+    height: 52vw;
+    width: 52vw;
+  }
+  .section.section--service .section-content .service .contents .row .gallery-wrapper .gallery.gallery--05 {
+    left: unset;
+    right: 1vw;
+    top: 150vw;
+    height: 42.4vw;
+    width: 42.4vw;
+  }
+  .section.section--service .section-content .service .contents .row .gallery-wrapper .gallery.gallery--06 {
+    left: 10vw;
+    top: 175vw;
+    height: 29.3vw;
+    width: 26.6vw;
+  }
+  .section.section--service .section-content .service .contents .row:nth-of-type(2) .gallery-wrapper:before, .section.section--service .section-content .service .contents .row:nth-of-type(2) .gallery-wrapper:after {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: #FAF7F2;
+    z-index: -1;
+  }
+  .section.section--service .section-content .service .contents .row:nth-of-type(2) .gallery-wrapper:before {
+    left: 13.3vw;
+    top: 90vw;
+    width: 58vw;
+    height: 56vw;
+  }
+  .section.section--service .section-content .service .contents .row:nth-of-type(2) .gallery-wrapper:after {
+    right: 10vw;
+    bottom: 0;
+    width: 56vw;
+    height: 42.6vw;
+  }
+}
 .section.section--service .section-content .service.service--flower-arrangement .header .header__text .title .title__panel.title__panel--right:after {
   display: none;
 }
@@ -808,19 +1072,60 @@ img {
   padding-bottom: 50px;
   position: relative;
 }
+@media only screen and (max-width: 768px) {
+  .section.section--service .section-content .service.service--bridal-flower {
+    padding-top: 8.4vw;
+    padding-bottom: 8.4vw;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .section.section--service .section-content .service.service--bridal-flower .header {
+    -webkit-box-direction: reverse;
+    -moz-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    height: 116vw;
+  }
+}
 .section.section--service .section-content .service.service--bridal-flower .header .header__text {
   margin-right: 45px;
   margin-left: unset;
 }
-.section.section--service .section-content .service.service--bridal-flower .header .header__text .title .title__panel.title__panel--left {
-  margin-right: 60px;
+@media only screen and (max-width: 768px) {
+  .section.section--service .section-content .service.service--bridal-flower .header .header__text {
+    margin-right: unset;
+  }
+}
+.section.section--service .section-content .service.service--bridal-flower .header .header__text .title {
+  -webkit-box-direction: reverse;
+  -moz-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--service .section-content .service.service--bridal-flower .header .header__text .title .title__panel.title__panel--left {
+    margin-right: unset;
+  }
 }
 .section.section--service .section-content .service.service--bridal-flower .header .header__text .title .title__panel.title__panel--left:after {
   display: none;
 }
 .section.section--service .section-content .service.service--bridal-flower .header .header__text .title .service-name {
-  left: 100px;
-  right: unset;
+  right: 100px;
+  right: 1em;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--service .section-content .service.service--bridal-flower .header .header__text .title .service-name {
+    left: unset;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .section.section--service .section-content .service.service--bridal-flower .header .header__image {
+    margin-left: unset;
+    margin-right: -5.33vw;
+    width: unset;
+    height: 50vw;
+  }
 }
 .section.section--service .section-content .service.service--bridal-flower:after {
   content: "";
@@ -851,12 +1156,25 @@ img {
 }
 .section.section--news .section-title h2 {
   position: relative;
-  font: 13px/1.5 Baskerville;
+  letter-spacing: 0.1em;
+  font: 13px/1.5 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--news .section-title h2 {
+    font-size: 2.66vw;
+  }
 }
 .section.section--news .section-title h2 span {
   display: block;
-  font: 51px/1.5 Baskerville;
+  font: 51px/1.5 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   margin-right: 0.5em;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--news .section-title h2 span {
+    font-size: 10.66vw;
+    line-height: 1;
+    margin-right: 0.2em;
+  }
 }
 .section.section--news .section-title h2:after {
   content: "";
@@ -868,6 +1186,11 @@ img {
   width: 1px;
   background-color: #1A1A1A;
 }
+@media only screen and (max-width: 768px) {
+  .section.section--news .section-title h2:after {
+    right: 1.8em;
+  }
+}
 .section.section--news .section-content {
   padding-left: 80px;
   overflow: hidden;
@@ -877,6 +1200,11 @@ img {
   -moz-box-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--news .section-content {
+    padding-left: 8vw;
+  }
 }
 .section.section--news .section-content .news .news-list .item {
   font: 12px/3 "Noto Serif JP";
@@ -888,10 +1216,24 @@ img {
   display: -webkit-flex;
   display: flex;
 }
+@media only screen and (max-width: 768px) {
+  .section.section--news .section-content .news .news-list .item {
+    font-size: 3.2vw;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
 .section.section--news .section-content .news .news-list .item:last-of-type {
   border-bottom: 1px solid #1A1A1A;
 }
 .section.section--news .section-content .news .news-list .item .datetime {
+  font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  line-height: 3;
   -webkit-flex: 0 0 5em;
   -webkit-box-flex: 0 0 5em;
   -webkit-flex: 0 0 5em;
@@ -900,6 +1242,31 @@ img {
   flex: 0 0 5em;
   padding-right: 2em;
   border-right: 1px solid #1A1A1A;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--news .section-content .news .news-list .item .datetime {
+    line-height: 2;
+    border-right: unset;
+    padding-right: unset;
+    -webkit-flex: none;
+    -webkit-box-flex: none;
+    -webkit-flex: none;
+    -moz-box-flex: none;
+    -ms-flex: none;
+    flex: none;
+    padding-bottom: 3vw;
+    position: relative;
+  }
+  .section.section--news .section-content .news .news-list .item .datetime:after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 1.5vw;
+    left: 0;
+    width: 3em;
+    height: 1px;
+    background-color: #1A1A1A;
+  }
 }
 .section.section--news .section-content .news .news-list .item .news-title {
   -webkit-flex: 1 1 auto;
@@ -913,6 +1280,15 @@ img {
   text-overflow: ellipsis;
   padding-left: 2em;
 }
+@media only screen and (max-width: 768px) {
+  .section.section--news .section-content .news .news-list .item .news-title {
+    font-size: 3.73vw;
+    line-height: 1.5;
+    padding-left: unset;
+    white-space: normal;
+    text-overflow: unset;
+  }
+}
 .section.section--news .section-content .news .view-more {
   text-align: right;
 }
@@ -920,11 +1296,24 @@ img {
   position: relative;
   left: -5em;
 }
+@media only screen and (max-width: 768px) {
+  .section.section--news .section-content .news .view-more {
+    text-align: left;
+  }
+  .section.section--news .section-content .news .view-more .link {
+    left: unset;
+  }
+}
 .section.section--menus {
   max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 100px;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--menus {
+    padding-bottom: 10vw;
+  }
 }
 .section.section--menus .section-content .menus .row {
   height: 250px;
@@ -933,6 +1322,11 @@ img {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--menus .section-content .menus .row {
+    height: calc(37.3vw + 14vw);
+  }
 }
 .section.section--menus .section-content .menus .row .menu-item {
   position: relative;
@@ -944,6 +1338,12 @@ img {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   position: relative;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--menus .section-content .menus .row .menu-item {
+    height: 37.3vw;
+    overflow: visible;
+  }
 }
 .section.section--menus .section-content .menus .row .menu-item:after {
   content: "";
@@ -968,6 +1368,11 @@ img {
 .section.section--menus .section-content .menus .row .menu-item .img {
   width: 100%;
 }
+@media only screen and (max-width: 768px) {
+  .section.section--menus .section-content .menus .row .menu-item.menu-item--frame-flower-art {
+    background: center url(../img/frame-flower-art.png);
+  }
+}
 .section.section--menus .section-content .menus .row .menu-item.menu-item--frame-flower-art .menu-link {
   left: 0;
   right: 0;
@@ -981,6 +1386,16 @@ img {
   -webkit-transform: translateY(-24%);
   -ms-transform: translateY(-24%);
   transform: translateY(-24%);
+}
+@media only screen and (max-width: 768px) {
+  .section.section--menus .section-content .menus .row .menu-item.menu-item--frame-flower-art .img {
+    display: none;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .section.section--menus .section-content .menus .row .menu-item.menu-item--lesson {
+    background: center url(../img/lesson.jpeg);
+  }
 }
 .section.section--menus .section-content .menus .row .menu-item.menu-item--lesson .menu-link {
   left: 0;
@@ -996,6 +1411,16 @@ img {
   -ms-transform: translateY(-3%);
   transform: translateY(-3%);
 }
+@media only screen and (max-width: 768px) {
+  .section.section--menus .section-content .menus .row .menu-item.menu-item--lesson .img {
+    display: none;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .section.section--menus .section-content .menus .row .menu-item.menu-item--workshop {
+    background: center url(../img/workshop.jpeg);
+  }
+}
 .section.section--menus .section-content .menus .row .menu-item.menu-item--workshop .menu-link {
   right: 0;
   top: 0;
@@ -1009,6 +1434,16 @@ img {
   -webkit-transform: translateY(-24%);
   -ms-transform: translateY(-24%);
   transform: translateY(-24%);
+}
+@media only screen and (max-width: 768px) {
+  .section.section--menus .section-content .menus .row .menu-item.menu-item--workshop .img {
+    display: none;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .section.section--menus .section-content .menus .row .menu-item.menu-item--dried-flower-kit {
+    background: center url(../img/dried-flower-kit.jpeg);
+  }
 }
 .section.section--menus .section-content .menus .row .menu-item.menu-item--dried-flower-kit .menu-link {
   left: 0;
@@ -1024,6 +1459,11 @@ img {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+@media only screen and (max-width: 768px) {
+  .section.section--menus .section-content .menus .row .menu-item.menu-item--dried-flower-kit .img {
+    display: none;
+  }
+}
 .section.section--menus .section-content .menus .row .menu-item + .menu-item {
   margin-left: 20px;
 }
@@ -1038,12 +1478,23 @@ img {
   text-align: center;
 }
 .section.section--menus .section-content .menus .row .menu-item .menu .menu__title-en {
-  font: 40px/1.2 Baskerville;
+  font: 40px/1.2 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  white-space: nowrap;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--menus .section-content .menus .row .menu-item .menu .menu__title-en {
+    font-size: 8vw;
+  }
 }
 .section.section--menus .section-content .menus .row .menu-item .menu .menu__title-jp {
   font: 14px/1.7 "Noto Serif JP";
   padding-bottom: 2em;
   position: relative;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--menus .section-content .menus .row .menu-item .menu .menu__title-jp {
+    font-size: 3vw;
+  }
 }
 .section.section--menus .section-content .menus .row .menu-item .menu .menu__title-jp:after {
   content: "";
@@ -1058,8 +1509,65 @@ img {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
+@media only screen and (max-width: 768px) {
+  .section.section--menus .section-content .menus .row .menu-item .menu .menu__title-jp {
+    padding-top: 2em;
+    padding-bottom: unset;
+  }
+  .section.section--menus .section-content .menus .row .menu-item .menu .menu__title-jp:after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 1em;
+    left: 50%;
+    height: 1px;
+    width: 3em;
+    background-color: white;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
 .section.section--menus .section-content .menus .row .menu-item .menu .menu__description {
   font: 13px/1.7 "Noto Serif JP";
+}
+@media only screen and (max-width: 768px) {
+  .section.section--menus .section-content .menus .row .menu-item .menu .menu__description {
+    display: none;
+  }
+}
+.section.section--menus .section-content .menus .row .menu-item .menu-description-sp {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--menus .section-content .menus .row .menu-item .menu-description-sp {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    position: absolute;
+    top: 37.3vw;
+    height: 14vw;
+    left: 0;
+    right: 0;
+    background-color: #999999;
+  }
+  .section.section--menus .section-content .menus .row .menu-item .menu-description-sp p {
+    font: 2.66vw/1.7 "Noto Serif JP";
+    text-align: center;
+    color: white;
+  }
 }
 .section.section--menus .section-content .menus .row + .row {
   margin-top: 20px;
@@ -1083,6 +1591,20 @@ img {
   align-items: center;
   position: relative;
 }
+@media only screen and (max-width: 768px) {
+  .section.section--access {
+    height: auto;
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
 .section.section--access:after {
   content: "";
   position: absolute;
@@ -1097,14 +1619,35 @@ img {
 .section.section--access .section-title {
   letter-spacing: 0.1em;
 }
+@media only screen and (max-width: 768px) {
+  .section.section--access .section-title {
+    text-align: center;
+  }
+}
 .section.section--access .section-title .shop-name {
   position: relative;
-  font: 13px/1.5 "Baskerville";
+  font: 13px/1.5 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--access .section-title .shop-name {
+    font-size: 2.66vw;
+  }
 }
 .section.section--access .section-title .shop-name span {
-  font: 60px/1 "Baskerville";
+  font: 60px/1 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   display: block;
   padding-bottom: 0.5em;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--access .section-title .shop-name span {
+    font-size: 12vw;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .section.section--access .section-title .shop-name span {
+    padding-bottom: unset;
+    padding-top: 0.5em;
+  }
 }
 .section.section--access .section-title .shop-name:after {
   content: "";
@@ -1116,8 +1659,28 @@ img {
   height: 1px;
   background-color: #1A1A1A;
 }
+@media only screen and (max-width: 768px) {
+  .section.section--access .section-title .shop-name:after {
+    width: 3em;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    top: 3em;
+    bottom: unset;
+  }
+}
 .section.section--access .section-title .shop-info {
   font: 14px/1.7 "Noto Serif JP";
+}
+@media only screen and (max-width: 768px) {
+  .section.section--access .section-title .shop-info {
+    font-size: 2.66vw;
+  }
+}
+.section.section--access .section-title .view-more {
+  position: relative;
+  left: -3em;
 }
 .section.section--access .section-content {
   -webkit-flex: 1 1 auto;
@@ -1130,6 +1693,22 @@ img {
   background: center center url(../img/access.png) no-repeat;
   background-size: cover;
   height: 100%;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--access .section-content {
+    -webkit-flex: none;
+    -webkit-box-flex: none;
+    -webkit-flex: none;
+    -moz-box-flex: none;
+    -ms-flex: none;
+    flex: none;
+    margin-left: -5.33vw;
+    margin-right: -5.33vw;
+    height: 40vw;
+    width: 100vw;
+    position: relative;
+    top: 10vw;
+  }
 }
 
 /* ----------------------------------------
@@ -1516,7 +2095,7 @@ img {
   justify-content: space-between;
   padding-left: 7em;
   height: 100%;
-  font-family: "Noto Serif CJK JP";
+  font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
 }
 @media (max-width: 768px) {
   .header-inner {
@@ -1526,20 +2105,39 @@ img {
 
 .page-footer {
   height: 240px;
-  background: center url("../img/banner.jpeg") no-repeat;
+  letter-spacing: 0.1em;
+  background: url("../img/banner.jpeg") no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  background-position: center top;
   position: relative;
   color: white;
+}
+@media only screen and (max-width: 768px) {
+  .page-footer {
+    height: 96vw;
+  }
 }
 .page-footer .left-navi {
   position: absolute;
   left: 60px;
   bottom: 75px;
 }
+@media only screen and (max-width: 768px) {
+  .page-footer .left-navi {
+    left: 10vw;
+    bottom: unset;
+    top: 10vw;
+  }
+}
 .page-footer .left-navi .navi-list span {
   display: block;
-  font: 14px/2 "Baskerville";
+  font: 14px/2 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+@media only screen and (max-width: 768px) {
+  .page-footer .left-navi .navi-list span {
+    font-size: 3.73vw;
+  }
 }
 .page-footer .about {
   position: absolute;
@@ -1550,12 +2148,27 @@ img {
   transform: translateX(-50%);
   text-align: center;
 }
+@media only screen and (max-width: 768px) {
+  .page-footer .about {
+    bottom: 10vw;
+  }
+}
 .page-footer .about .company {
-  font: 12px/1.5 "Baskerville";
+  font: 12px/1.5 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+@media only screen and (max-width: 768px) {
+  .page-footer .about .company {
+    font-size: 3.2vw;
+  }
 }
 .page-footer .about .company span {
-  font: 42px/1.2 "Baskerville";
+  font: 42px/1.2 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   display: block;
+}
+@media only screen and (max-width: 768px) {
+  .page-footer .about .company span {
+    font-size: 11vw;
+  }
 }
 .page-footer .about .link-buttons {
   display: -webkit-box;
@@ -1576,6 +2189,13 @@ img {
   margin-top: 1em;
   margin-bottom: 1em;
 }
+@media only screen and (max-width: 768px) {
+  .page-footer .about .link-buttons {
+    font-size: 3.2vw;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+}
 .page-footer .about .link-buttons .link-to-instagram {
   cursor: pointer;
 }
@@ -1590,10 +2210,16 @@ img {
   height: 1em;
 }
 .page-footer .about .copyright {
-  font: 11px/1.75 Baskerville;
+  font: 11px/1.75 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+@media only screen and (max-width: 768px) {
+  .page-footer .about .copyright {
+    font-size: 3vw;
+    white-space: nowrap;
+  }
 }
 .page-footer .scroll-to-top {
-  font: 13px Baskerville;
+  font: 13px Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   position: absolute;
   right: 60px;
   top: calc(50% + 2.5em);
@@ -1601,6 +2227,12 @@ img {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   cursor: pointer;
+}
+@media only screen and (max-width: 768px) {
+  .page-footer .scroll-to-top {
+    right: 5.33vw;
+    top: calc(10vw + 8em);
+  }
 }
 .page-footer .scroll-to-top:before {
   content: "";

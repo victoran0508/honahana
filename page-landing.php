@@ -1,40 +1,5 @@
-<!-- HTMLコード -->
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Script-Type" content="text/javascript" />
-	<meta http-equiv="Content-Style-Type" content="text/css" />
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-
-    <!-- css -->
-    <link rel="stylesheet" href="./libs/slick/slick.css">
-    <link rel="stylesheet" href="./libs/slick/slick-theme.css">
-    <link rel="stylesheet" href="./assets/css/theme.css">
-
-    <!-- javascript -->
-    <script src="./libs/jquery/jquery-3.4.1.min.js"></script>
-</head>
-
-<body>
-    <header class="page-header">
-        <div class="header-inner">
-            <a href="#" class="logo"><img src="./assets/img/logo.png" alt="" /></a>
-            <a href="javascript:void(0)" class="nav-open"><i></i><span></span></a>
-            <div class="nav-wrapper">
-                <ul class="nav">
-                    <li><a href="/concept">Concept</a></li>
-                    <li><a href="/arrange">Arrange</a></li>
-                    <li><a href="/bridal">Bridal</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/news">News</a></li>
-                    <li><a href="/contact" class="contact"><img src="./assets/img/envelope.svg" alt="" /></a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
+<?php get_header(); ?>
+    
     <div class="page-wrapper">
         <section class="section section--hero">
             <div class="hero-title">
@@ -44,18 +9,18 @@
                     <span class="service2">Bridal Flower</span>
                     <span class="service3">Frame Flower Art</span>
                 </p>
-                <a class="follow-me" href="https://instagram.com/honahana"><img src="./assets/img/followme.svg"></a>
-                <a class="scroll"><img src="./assets/img/scroll.svg"></a>
+                <a class="follow-me" href="https://instagram.com/honahana"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/followme.svg"></a>
+                <a class="scroll"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/scroll.svg"></a>
             </div>
             <div class="hero-carousel">
                 <div class="hero-item">
-                    <div class="hero-img" style="background-image: url(./assets/img/hero01.jpg);"></div>
+                    <div class="hero-img" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/img/hero01.jpg);"></div>
                 </div>
                 <div class="hero-item">
-                    <div class="hero-img" style="background-image: url(./assets/img/hero02.jpg);"></div>
+                    <div class="hero-img" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/img/hero02.jpg);"></div>
                 </div>
                 <div class="hero-item">
-                    <div class="hero-img" style="background-image: url(./assets/img/hero03.jpg);"></div>
+                    <div class="hero-img" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/img/hero03.jpg);"></div>
                 </div>
             </div>
         </section>
@@ -76,12 +41,12 @@
                             “この花”を大切な人に贈る<br class="sp">お手伝いをいたします。<br>
                         </mark>
                         <div class="view-more">
-                            <a class="link" href="/concept">More View</a>
+                            <a class="link" href="<?php home_url(); ?>/concept">More View</a>
                         </div>
                     </div>
                 </div>
                 <figure class="section-content__image background-zoom effect">
-                    <img class="img" src="./assets/img/hero01.jpg">
+                    <img class="img" src="<?php echo get_template_directory_uri(); ?>/assets/img/hero01.jpg">
                 </figure>
             </div>
         </section>
@@ -93,7 +58,7 @@
                 <dl class="service service--flower-arrangement">
                     <dt class="header">
                         <figure class="header__image background-zoom effect">
-                            <img class="img" src="./assets/img/flower-arrangement.jpeg">
+                            <img class="img" src="<?php echo get_template_directory_uri(); ?>/assets/img/flower-arrangement.jpeg">
                         </figure>
                         <div class="header__text">
                             <div class="title">
@@ -116,7 +81,7 @@
                                         </p>
                                     </div>
                                     <div class="view-more">
-                                        <a class="link" href="/concept">More View</a>
+                                        <a class="link" href="<?php home_url(); ?>/concept">More View</a>
                                     </div>
                                 </div>
                                 <div class="title__panel title__panel--right">
@@ -135,26 +100,26 @@
                                     </h3>
                                 </div>
                                 <figure class="gallery gallery--01 background-zoom effect">
-                                    <img src="./assets/img/gallery01.JPG">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/gallery01.JPG">
                                 </figure>
                                 <figure class="gallery gallery--02 background-zoom effect">
-                                    <img src="./assets/img/gallery02.png">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/gallery02.png">
                                 </figure>
                                 <figure class="gallery gallery--03 background-zoom effect">
-                                    <img src="./assets/img/gallery03.png">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/gallery03.png">
                                 </figure>
                             </div>
                         </div>
                         <div class="row">
                             <div class="gallery-wrapper">
                                 <figure class="gallery gallery--04 background-zoom effect">
-                                    <img src="./assets/img/gallery04.JPG">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/gallery04.JPG">
                                 </figure>
                                 <figure class="gallery gallery--05 background-zoom effect">
-                                    <img src="./assets/img/gallery05.JPG">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/gallery05.JPG">
                                 </figure>
                                 <figure class="gallery gallery--06 background-zoom effect">
-                                    <img src="./assets/img/gallery06.jpeg">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/gallery06.jpeg">
                                 </figure>
                             </div>
                         </div>
@@ -186,13 +151,13 @@
                                         </p>
                                     </div>
                                     <div class="view-more">
-                                        <a class="link" href="/concept">More View</a>
+                                        <a class="link" href="<?php home_url(); ?>/concept">More View</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <figure class="header__image background-zoom effect">
-                            <img class="img" src="./assets/img/bridal-flower.jpeg">
+                            <img class="img" src="<?php echo get_template_directory_uri(); ?>/assets/img/bridal-flower.jpeg">
                         </figure>
                     </dt>
                 </dl>
@@ -219,7 +184,7 @@
                         </div>
                     </div>
                     <div class="view-more">
-                        <a class="link" href="/news">All View</a>
+                        <a class="link" href="<?php home_url(); ?>/news">All View</a>
                     </div>
                 </div>
             </div>
@@ -229,8 +194,8 @@
                 <div class="menus">
                     <div class="row">
                         <div class="menu-item menu-item--frame-flower-art">
-                            <a class="menu-link" href="/frame"></a>
-                            <img class="img" src="./assets/img/frame-flower-art.png">
+                            <a class="menu-link" href="<?php home_url(); ?>/frame"></a>
+                            <img class="img" src="<?php echo get_template_directory_uri(); ?>/assets/img/frame-flower-art.png">
                             <div class="menu">
                                 <p class="menu__title-en">
                                     Frame flower art
@@ -252,8 +217,8 @@
                     </div>
                     <div class="row">
                         <div class="menu-item menu-item--lesson">
-                            <a class="menu-link" href="/lesson"></a>
-                            <img class="img" src="./assets/img/lesson.jpeg">
+                            <a class="menu-link" href="<?php home_url(); ?>/lesson"></a>
+                            <img class="img" src="<?php echo get_template_directory_uri(); ?>/assets/img/lesson.jpeg">
                             <div class="menu">
                                 <p class="menu__title-en">
                                     Lesson
@@ -273,8 +238,8 @@
                             </div>
                         </div>
                         <div class="menu-item menu-item--workshop">
-                            <a class="menu-link" href="/workshop"></a>
-                            <img class="img" src="./assets/img/workshop.jpeg">
+                            <a class="menu-link" href="<?php home_url(); ?>/workshop"></a>
+                            <img class="img" src="<?php echo get_template_directory_uri(); ?>/assets/img/workshop.jpeg">
                             <div class="menu">
                                 <p class="menu__title-en">
                                     Workshop
@@ -296,8 +261,8 @@
                     </div>
                     <div class="row">
                         <div class="menu-item menu-item--dried-flower-kit">
-                            <a class="menu-link" href="/kit"></a>
-                            <img class="img" src="./assets/img/dried-flower-kit.jpeg">
+                            <a class="menu-link" href="<?php home_url(); ?>/kit"></a>
+                            <img class="img" src="<?php echo get_template_directory_uri(); ?>/assets/img/dried-flower-kit.jpeg">
                             <div class="menu">
                                 <p class="menu__title-en">
                                     Dried Flower Kit
@@ -325,7 +290,7 @@
                 <p class="shop-name">flower atelier hona hana<span>Atelier</span></p>
                 <p class="shop-info">〒596-0811<br class="pc tb">大阪府岸和田市下池田町1-10-18</p>
                 <div class="view-more">
-                    <a class="link" href="/about">More View</a>
+                    <a class="link" href="<?php home_url(); ?>/about">More View</a>
                 </div>
             </div>
             <div class="section-content">
@@ -333,31 +298,5 @@
             </div>
         </section>
     </div>
-    <footer class="page-footer">
-        <div class="left-navi">
-            <p class="navi-list">
-                <span>Flower Arrangement</span>
-                <span>Bridal Flower</span>
-                <span>Frame Flower Art</span>
-            </p>
-        </div>
-        <div class="about">
-            <p class="company">
-                <span>hona hana</span>
-                flower atelier
-            </p>
-            <p class="link-buttons">
-                <a class="link-to-instagram" href="https://instagram.com/honahana"><img src="./assets/img/instagram.svg"></a>
-                <a class="link-to-contact" href="/contact"><img src="./assets/img/envelope.svg"></a>
-            </p>
-            <p class="copyright">Copyright© flower atelier hona hana All rights reserved.</p>
-        </div>
-        <a class="scroll-to-top">
-            PAGE TOP
-        </a>
-    </footer>
 
-    <script src="./libs/slick/slick.min.js"></script>
-    <script src="./assets/js/theme.js"></script>
-</body>
-</html>
+<?php get_footer(); ?>

@@ -59,3 +59,23 @@ img {
 .background-zoom:hover img {
     transform: scale(1.05);
 }
+
+.pc, .tb, .sp {
+    display: none;
+}
+
+@media screen and (min-width: 1025px) {
+    .pc {
+        display: block;
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .tb {
+        display: block;
+    }
+}
+@media screen and (max-width: 768px) {
+    .sp {
+        display: block;
+    }
+}

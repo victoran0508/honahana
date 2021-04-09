@@ -57,7 +57,7 @@
     @include justify-content(space-between);
     padding-left: 7em;
     height: 100%;
-    font-family: "Noto Serif CJK JP";
+    font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
     @media (max-width: 768px) {
 		padding-left: 2vw;
 	}
@@ -65,9 +65,14 @@
 
 .page-footer {
 	height: 240px;
-	background: center url('../img/banner.jpeg') no-repeat;
+	@media only screen and (max-width: 768px) {
+		height: 96vw;
+	}
+	letter-spacing: 0.1em;
+	background: url('../img/banner.jpeg') no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    background-position: center top;
     position: relative;
     color: white;
 
@@ -75,10 +80,18 @@
 		position: absolute;
 		left: 60px;
 		bottom: 75px;
+		@media only screen and (max-width: 768px) {
+			left: 10vw;
+			bottom: unset;
+			top: 10vw;
+		}
 		.navi-list {
 			span {
                 display: block;
-                font: 14px/2 "Baskerville";
+                font: 14px/2 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+                @media only screen and (max-width: 768px) {
+					font-size: 3.73vw;
+				}
 			}
 		}
 	}
@@ -89,12 +102,21 @@
 		bottom: 30px;
         @include transform(translateX(-50%));
         text-align: center;
+        @media only screen and (max-width: 768px) {
+        	bottom: 10vw;
+        }
 
 		.company {
-			font: 12px / 1.5 "Baskerville";
+			font: 12px / 1.5 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+			@media only screen and (max-width: 768px) {
+				font-size: 3.2vw;
+			}
 			span {
-                font: 42px / 1.2 "Baskerville";
+                font: 42px / 1.2 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
                 display: block;
+                @media only screen and (max-width: 768px) {
+                	font-size: 11vw;
+                }
 			}
 		}
 
@@ -104,6 +126,11 @@
 			@include align-items-center;
 			margin-top: 1em;
 			margin-bottom: 1em;
+			@media only screen and (max-width: 768px) {
+				font-size: 3.2vw;
+				margin-top: 1.5em;
+				margin-bottom: 1.5em;
+			}
 
 			.link-to-instagram {
 				cursor: pointer;
@@ -121,18 +148,26 @@
 		}
 
 		.copyright {
-            font: 11px / 1.75 Baskerville;
+            font: 11px / 1.75 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+            @media only screen and (max-width: 768px) {
+				font-size: 3vw;
+				white-space: nowrap;
+			}
 		}
 	}
 
 	.scroll-to-top {
 		@extend .vertical-writing;
-		font: 13px Baskerville;
+		font: 13px Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
 		position: absolute;
 		right: 60px;
 		top: calc(50% + 2.5em);
 		@include transform(translateY(-50%));
 		cursor: pointer;
+		@media only screen and (max-width: 768px) {
+			right: 5.33vw;
+			top: calc(10vw + 8em);
+		}
         
         &:before {
         	content: "";

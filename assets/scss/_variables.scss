@@ -190,6 +190,13 @@ $max-height-top-logo-sp: $top-banner-height-sp * 0.4;
 	flex-direction: row-reverse;
 }
 
+@mixin flex-direction-column-reverse {
+	-webkit-box-direction: reverse;
+	-moz-box-direction: reverse;
+	-ms-flex-direction: column-reverse;
+	flex-direction: column-reverse;
+}
+
 @mixin flex-wrap-wrap {
     @include flex-wrap(wrap);
 }
