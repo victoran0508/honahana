@@ -2,6 +2,7 @@
 /* 変数 */
 /* 基礎のスタイル */
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700|Noto+Serif+JP:400,500,600,700|Roboto:400,400i,500,500i,700,700i&display=swap&subset=japanese");
+@import url("https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -183,6 +184,11 @@ img {
 }
 .with-top-margin {
   margin-top: calc(60px + 6em);
+}
+@media only screen and (max-width: 768px) {
+  .with-top-margin {
+    margin-top: 14.6vw;
+  }
 }
 
 .section.section--hero {
@@ -1814,6 +1820,11 @@ img {
   -webkit-align-items: center;
   align-items: center;
 }
+@media only screen and (max-width: 768px) {
+  .section.section--page-title {
+    height: 44vw;
+  }
+}
 .section.section--page-title h1 {
   text-align: center;
   font: 13px/1 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
@@ -2048,6 +2059,396 @@ img {
     height: 20.8vw;
   }
 }
+.section.section--access-map {
+  padding-top: 30px;
+  padding-bottom: 100px;
+  position: relative;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--access-map {
+    padding-top: 5vw;
+    padding-bottom: 16vw;
+  }
+}
+.section.section--access-map:after {
+  content: "";
+  position: absolute;
+  display: block;
+  background-color: #F5F2ED;
+  left: calc(50% - 50vw);
+  right: calc(50% - 50vw);
+  top: 0;
+  height: 100%;
+  z-index: -1;
+}
+.section.section--access-map .section-title {
+  text-align: center;
+}
+.section.section--access-map .section-title h2 {
+  font: 30px/1 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  margin-bottom: 1.6em;
+  position: relative;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--access-map .section-title h2 {
+    font-size: 8vw;
+  }
+}
+.section.section--access-map .section-title h2:after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -0.8em;
+  left: 50%;
+  width: 2em;
+  height: 1px;
+  background-color: #1A1A1A;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.section.section--access-map .section-title .address {
+  font: 14px/1 "Noto Serif JP", serif;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--access-map .section-title .address {
+    font-size: 2.66vw;
+  }
+}
+.section.section--access-map .section-content .access-map {
+  max-width: 880px;
+  height: 350px;
+  background: center url(../img/access-map.png) no-repeat;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--access-map .section-content .access-map {
+    height: 50vw;
+    margin-top: 6vw;
+    margin-left: -5.33vw;
+    margin-right: -5.33vw;
+  }
+}
+.section.section--access-map .section-content .information {
+  margin-top: 70px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  -moz-box-pack: center;
+  justify-content: center;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--access-map .section-content .information {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-top: 6vw;
+  }
+}
+.section.section--access-map .section-content .information .information__title h3 {
+  font: 30px/1 Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  margin-right: 90px;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--access-map .section-content .information .information__title h3 {
+    text-align: center;
+    margin-right: unset;
+  }
+}
+.section.section--access-map .section-content .information .information__title h3 span {
+  display: block;
+  margin-top: 2em;
+  font: 14px/1 "Noto Serif JP", serif;
+  font-weight: 600;
+  position: relative;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--access-map .section-content .information .information__title h3 span {
+    margin-top: 3em;
+  }
+}
+.section.section--access-map .section-content .information .information__title h3 span:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 4em;
+  height: 1px;
+  top: -1em;
+  left: 0;
+  background-color: #1A1A1A;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--access-map .section-content .information .information__title h3 span:before {
+    left: 50%;
+    top: -1.5em;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .section.section--access-map .section-content .information .information__details {
+    margin-top: 8vw;
+  }
+}
+.section.section--access-map .section-content .information .information__details .item {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  letter-spacing: 0.2em;
+}
+.section.section--access-map .section-content .information .information__details .item .item__name {
+  -webkit-flex: 0 0 5em;
+  -webkit-box-flex: 0 0 5em;
+  -webkit-flex: 0 0 5em;
+  -moz-box-flex: 0 0 5em;
+  -ms-flex: 0 0 5em;
+  flex: 0 0 5em;
+  font: 12px/2.5 "Noto Serif JP", serif;
+  font-weight: 600;
+  text-align: right;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--access-map .section-content .information .information__details .item .item__name {
+    font-size: 3.2vw;
+  }
+}
+.section.section--access-map .section-content .information .information__details .item .item__value {
+  -webkit-flex: 1 1 auto;
+  -webkit-box-flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  -moz-box-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  font: 12px/2.5 "Noto Serif JP", serif;
+  font-weight: 600;
+  margin-left: 2em;
+  padding-left: 2em;
+  border-left: 1px solid #1A1A1A;
+  white-space: nowrap;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--access-map .section-content .information .information__details .item .item__value {
+    font-size: 3.2vw;
+  }
+}
+.section.section--access-map .section-content .information .information__details .item .item__value a.map {
+  font-size: 10px;
+  line-height: 1;
+  margin-left: 1em;
+  padding: 0.25em 0.5em;
+  border: 1px solid #1A1A1A;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--access-map .section-content .information .information__details .item .item__value a.map {
+    font-size: 2.66vw;
+  }
+}
+.section.section--contact {
+  padding-top: unset;
+  margin-bottom: 80px;
+  max-width: 880px;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--contact {
+    margin-bottom: 8vw;
+    padding-left: 2.66vw;
+    padding-right: 2.66vw;
+  }
+}
+.section.section--contact .section-content .mw_wp_form {
+  padding: 60px;
+  font: 15px "Noto Serif JP", serif;
+  background-color: #F5F2ED;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--contact .section-content .mw_wp_form {
+    padding: 8vw 2.66vw;
+    font-size: 3.2vw;
+  }
+}
+.section.section--contact .section-content .mw_wp_form dl.input {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  padding: 20px 40px;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--contact .section-content .mw_wp_form dl.input {
+    padding: 4vw;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+.section.section--contact .section-content .mw_wp_form dl.input dt {
+  -webkit-flex: 0 0 15em;
+  -webkit-box-flex: 0 0 15em;
+  -webkit-flex: 0 0 15em;
+  -moz-box-flex: 0 0 15em;
+  -ms-flex: 0 0 15em;
+  flex: 0 0 15em;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-flex-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  font-weight: 600;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--contact .section-content .mw_wp_form dl.input dt {
+    -webkit-flex: none;
+    -webkit-box-flex: none;
+    -webkit-flex: none;
+    -moz-box-flex: none;
+    -ms-flex: none;
+    flex: none;
+    margin-bottom: 3vw;
+  }
+}
+.section.section--contact .section-content .mw_wp_form dl.input dt .req {
+  font-size: 10px;
+  line-height: 1;
+  display: block;
+  padding: 0.2em 0.8em;
+  background-color: #1A1A1A;
+  color: #FFFFFF;
+  margin-left: 1em;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--contact .section-content .mw_wp_form dl.input dt .req {
+    font-size: 2.66vw;
+  }
+}
+.section.section--contact .section-content .mw_wp_form dl.input dd {
+  -webkit-flex: 1 1 auto;
+  -webkit-box-flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  -moz-box-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--contact .section-content .mw_wp_form dl.input dd {
+    -webkit-flex: none;
+    -webkit-box-flex: none;
+    -webkit-flex: none;
+    -moz-box-flex: none;
+    -ms-flex: none;
+    flex: none;
+  }
+}
+.section.section--contact .section-content .mw_wp_form dl.input dd .vertical-item {
+  display: block;
+}
+.section.section--contact .section-content .mw_wp_form dl.input dd .vertical-item + .vertical-item {
+  margin-top: 0.5em;
+}
+.section.section--contact .section-content .mw_wp_form dl.input dd input[type=text], .section.section--contact .section-content .mw_wp_form dl.input dd input[type=email], .section.section--contact .section-content .mw_wp_form dl.input dd input[type=number], .section.section--contact .section-content .mw_wp_form dl.input dd textarea {
+  border: none;
+  padding: 0.8em 1.6em;
+  max-width: 100%;
+  width: 100%;
+}
+.section.section--contact .section-content .mw_wp_form dl.input dd textarea {
+  width: 100%;
+}
+.section.section--contact .section-content .mw_wp_form dl.input dd p.count {
+  display: none;
+}
+.section.section--contact .section-content .mw_wp_form dl.input + .input {
+  border-top: 1px solid #1A1A1A;
+}
+.section.section--contact .section-content .mw_wp_form .agree {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  -moz-box-pack: center;
+  justify-content: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--contact .section-content .mw_wp_form .agree {
+    padding-top: 12vw;
+    padding-bottom: 12vw;
+  }
+}
+.section.section--contact .section-content .mw_wp_form .submit {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  -moz-box-pack: center;
+  justify-content: center;
+}
+.section.section--contact .section-content .mw_wp_form .submit button[type=submit] {
+  font: 18px/3.5 "Noto Serif JP", serif;
+  border: none;
+  background-color: #1A1A1A;
+  width: 320px;
+  color: #FFFFFF;
+  text-align: center;
+  position: relative;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--contact .section-content .mw_wp_form .submit button[type=submit] {
+    font-size: 3.73vw;
+    width: 64vw;
+  }
+}
+.section.section--contact .section-content .mw_wp_form .submit button[type=submit]:after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 1px solid #FFFFFF;
+}
+@media only screen and (max-width: 768px) {
+  .section.section--contact .section-content .mw_wp_form .submit button[type=submit]:after {
+    top: 1vw;
+    left: 1vw;
+    right: 1vw;
+    bottom: 1vw;
+  }
+}
+
 /* ----------------------------------------
 ナビーメニュー
 ----------------------------------------*/

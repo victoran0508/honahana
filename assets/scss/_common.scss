@@ -99,6 +99,9 @@
 
 .with-top-margin {
 	margin-top: calc(60px + 6em);
+	@media only screen and (max-width: 768px) {
+		margin-top: 14.6vw;
+	}
 }
 
 .section.section--hero {
@@ -1498,6 +1501,9 @@
 		@include display-flex;
 		@include justify-content-center;
 		@include align-items-center;
+		@media only screen and (max-width: 768px) {
+			height: 44vw;
+		}
 
 		h1 {
 			text-align: center;
@@ -1738,6 +1744,311 @@
 						.img {
 
 						}
+					}
+				}
+			}
+		}
+	}
+
+	&.section--access-map {
+		padding-top: 30px;
+		padding-bottom: 100px;
+		@media only screen and (max-width: 768px) {
+			padding-top: 5vw;
+			padding-bottom: 16vw;
+		}
+		position: relative;
+		&:after {
+			content: "";
+			position: absolute;
+			display: block;
+			background-color: #F5F2ED;
+			left: calc(50% - 50vw);
+			right: calc(50% - 50vw);
+			top: 0;
+			height: 100%;
+			z-index: -1;
+		}
+
+		.section-title {
+			text-align: center;
+			h2 {
+				font: 30px / 1 $font-baskerville;
+				@media only screen and (max-width: 768px) {
+					font-size: 8vw;
+				}
+				margin-bottom: 1.6em;
+                position: relative;
+
+				&:after {
+					content: "";
+					position: absolute;
+					display: block;
+					bottom: -0.8em;
+					left: 50%;
+					width: 2em;
+					height: 1px;
+					background-color: $color-gray1;
+					@include transform(translateX(-50%));
+				}
+			}
+
+			.address {
+                font: 14px / 1 $font-serif;
+                @media only screen and (max-width: 768px) {
+                	font-size: 2.66vw;
+                }
+			}
+		}
+
+		.section-content {
+			.access-map {
+                max-width: 880px;
+                height: 350px;
+                background: center url(../img/access-map.png) no-repeat;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 40px;
+                @media only screen and (max-width: 768px) {
+                	height: 50vw;
+                	margin-top: 6vw;
+                	margin-left: -5.33vw;
+                	margin-right: -5.33vw;
+                }
+			}
+
+			.information {
+				margin-top: 70px;
+				@include display-flex;
+				@include justify-content-center;
+				@media only screen and (max-width: 768px) {
+					@include flex-direction-column;
+					margin-top: 6vw;
+				}
+
+				.information__title {
+					h3 {
+						font: 30px / 1 $font-baskerville;
+						margin-right: 90px;
+						@media only screen and (max-width: 768px) {
+							text-align: center;
+							margin-right: unset;
+						}
+
+						span {
+							display: block;
+							margin-top: 2em;
+							@media only screen and (max-width: 768px) {
+                            	margin-top: 3em;
+                            }
+                            font: 14px / 1 $font-serif;
+                            font-weight: 600;
+                            position: relative;
+
+                            &:before {
+                            	content: "";
+                            	position: absolute;
+                            	display: block;
+                            	width: 4em;
+                            	height: 1px;
+                            	top: -1em;
+                            	left: 0;
+                            	background-color: $color-gray1;
+
+                            	@media only screen and (max-width: 768px) {
+                            		left: 50%;
+                            		top: -1.5em;
+                            		@include transform(translateX(-50%));
+                            	}
+                            }
+						}
+					}
+				}
+
+				.information__details {
+					@media only screen and (max-width: 768px) {
+						margin-top: 8vw;
+					}
+					.item {
+						@include display-flex;
+						letter-spacing: 0.2em;
+
+						.item__name {
+							@include flex(0 0 5em);
+                            font: 12px / 2.5 $font-serif;
+                            font-weight: 600;
+                            text-align: right;
+                            @media only screen and (max-width: 768px) {
+                            	font-size: 3.2vw;
+                            }
+						}
+
+						.item__value {
+							@include flex(1 1 auto);
+                            font: 12px / 2.5 $font-serif;
+                            font-weight: 600;
+                            margin-left: 2em;
+                            padding-left: 2em;
+                            border-left: 1px solid $color-gray1;
+                            white-space: nowrap;
+                            @media only screen and (max-width: 768px) {
+                            	font-size: 3.2vw;
+                            }
+
+                            a.map {
+                            	font-size: 10px;
+                            	line-height: 1;
+                            	margin-left: 1em;
+                            	padding: 0.25em 0.5em;
+                            	border: 1px solid $color-gray1;
+
+                            	@media only screen and (max-width: 768px) {
+									font-size: 2.66vw;
+								}
+                            }
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&.section--contact {
+		padding-top: unset;
+		margin-bottom: 80px;
+		@media only screen and (max-width: 768px) {
+			margin-bottom: 8vw;
+			padding-left: 2.66vw;
+			padding-right: 2.66vw;
+		}
+		max-width: 880px;
+
+		.section-content {
+			.mw_wp_form {
+				padding: 60px;
+				font: 15px $font-serif;
+				@media only screen and (max-width: 768px) {
+					padding: 8vw 2.66vw;
+					font-size: 3.2vw;
+				}
+				background-color: #F5F2ED;
+
+				dl.input {
+					@include display-flex;
+					padding: 20px 40px;
+// 					font: 15px $font-serif;
+					@media only screen and (max-width: 768px) {
+						padding: 4vw;
+						@include flex-direction-column;
+// 						font-size: 3.2vw;
+					}
+
+					dt {
+                        @include flex(0 0 15em);
+                        @include display-flex;
+                        @include align-items-center;
+                        @media only screen and (max-width: 768px) {
+                        	@include flex(none);
+                        	margin-bottom: 3vw;
+                        }
+
+                        font-weight: 600;
+
+                        .req {
+                        	font-size: 10px;
+                        	line-height: 1;
+                        	display: block;
+                            padding: 0.2em 0.8em;
+                            background-color: $color-gray1;
+                            color: $color-white;
+                            margin-left: 1em;
+
+                            @media only screen and (max-width: 768px) {
+								font-size: 2.66vw;
+							}
+                        }
+					}
+
+					dd {
+                        @include flex(1 1 auto);
+                        @media only screen and (max-width: 768px) {
+                        	@include flex(none);
+                        }
+
+                        .vertical-item {
+                        	display: block;
+
+                        	& + .vertical-item {
+                        		margin-top: 0.5em;
+                        	}
+                        }
+
+                        input[type="text"], input[type="email"], input[type="number"], textarea {
+                        	border: none;
+                        	padding: 0.8em 1.6em;
+                        	max-width: 100%;
+                        	width: 100%;
+                        }
+
+                        textarea {
+                        	width: 100%;
+                        }
+
+                        p.count {
+                        	display: none;
+                        }
+					}
+
+					& + .input {
+						border-top: 1px solid $color-gray1;
+					}
+				}
+
+				.agree {
+					@include display-flex;
+					@include justify-content-center;
+					padding-top: 60px;
+					padding-bottom: 60px;
+					@media only screen and (max-width: 768px) {
+						padding-top: 12vw;
+						padding-bottom: 12vw;
+					}
+				}
+
+				.submit {
+					@include display-flex;
+					@include justify-content-center;
+					
+					button[type="submit"] {
+                        font: 18px/3.5 $font-serif;
+                        border: none;
+                        background-color: $color-gray1;
+                        width: 320px;
+                        color: $color-white;
+                        text-align: center;
+                        position: relative;
+
+                        @media only screen and (max-width: 768px) {
+                        	font-size: 3.73vw;
+                        	width: 64vw;
+                        }
+
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            display: block;
+                            top: 5px;
+                            left: 5px;
+                            right: 5px;
+                            bottom: 5px;
+                            border: 1px solid $color-white;
+                            @media only screen and (max-width: 768px) {
+                            	top: 1vw;
+                            	left: 1vw;
+                            	right: 1vw;
+                            	bottom: 1vw;
+                            }
+                        }
 					}
 				}
 			}
