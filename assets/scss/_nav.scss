@@ -207,14 +207,14 @@
 
 				.logo {
 					img {
-						filter: invert(1);
+						filter: invert(0.9);
 					}
 				}
 
 				.nav-open {
 					span {
 						&:before, &:after {
-							filter: invert(1);
+							filter: invert(0.9);
 						}
 					}
 				}
@@ -230,13 +230,13 @@
 		li {
 			display: block;
 			position: relative;
-			color: #1A1A1A;
+			color: $color-gray1;
 			font-size: 15px;
 			margin: 0;
 			opacity: 1;
 
 			&:hover > a {
-				color: #1A1A1A;
+				color: $color-gray1;
 			}
 		}
 

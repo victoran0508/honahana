@@ -24,32 +24,64 @@
 	    @media only screen and (max-width: 768px) {
 	    	height: 14.6vw;
 	    }
+
+		.logo {
+			img {
+				filter: revert(1);
+			}
+		}
 	}
 
 	a {
 	    color: white;
 	}
+
+	.logo {
+		width: 60px;
+		height: 60px;
+		@media only screen and (max-width: 768px) {
+			height: 10vw;
+			width: 10vw;
+		}
+	}
+
+	&.page-header--white-background {
+		color: $color-gray1;
+		a {
+			color: $color-gray1;
+		}
+
+		.logo {
+			img {
+				filter: invert(0.9);
+			}
+		}
+
+		.contact img {
+			filter: invert(0.9);
+		}
+
+		&.header-sticky {
+			color: $color-white;
+			a {
+				color: $color-white;
+			}
+
+			.logo {
+				img {
+					filter: unset;
+				}
+			}
+
+			.contact img {
+				filter: unset;
+			}
+		}
+	}
 }
 
 .page-header:not(.header-sticky) a {
     color: inherit;
-}
-
-.logo {
-    width: 60px;
-    height: 60px;
-    @media only screen and (max-width: 768px) {
-    	height: 10vw;
-    	width: 10vw;
-    }
-}
-
-.page-header.header-sticky {
-	.logo {
-		img {
-			filter: revert(1);
-		}
-	}
 }
 
 .header-inner {

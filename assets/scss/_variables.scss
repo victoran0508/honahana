@@ -4,7 +4,7 @@
 // ベーシックカラー
 $color-white: #FFFFFF;
 $color-black: #000000;
-$color-gray1: #191819;
+$color-gray1: #1A1A1A;
 $color-gray2: #b8b8b8;
 $color-gray3: #797979;
 $color-gray4: #f9f9f9;
@@ -22,9 +22,10 @@ $color-menu-white: $color-white;
 $color-header: $color-gray2;
 
 // フォント
-$font-sans: "YuGothic", "Yu Gothic Medium";
+$font-sans: 'Noto Sans JP', sans-serif;
 $font-poppins: "Poppins";
-$font-serif: "Noto Serif JP";
+$font-serif: 'Noto Serif JP', serif;
+$font-baskerville: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
 
 $font-family-text: $font-sans;
 
