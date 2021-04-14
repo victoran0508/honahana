@@ -9,7 +9,7 @@
                     <span class="service2">Bridal Flower</span>
                     <span class="service3">Frame Flower Art</span>
                 </p>
-                <a class="follow-me" href="https://instagram.com/honahana"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/followme.svg"></a>
+                <a class="follow-me" href="https://instagram.com/honahanaflower" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/followme.svg"></a>
                 <a class="scroll"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/scroll.svg"></a>
             </div>
             <div class="hero-carousel">
@@ -81,7 +81,7 @@
                                         </p>
                                     </div>
                                     <div class="view-more">
-                                        <a class="link" href="<?php home_url(); ?>/concept">More View</a>
+                                        <a class="link" href="<?php home_url(); ?>/arrange">More View</a>
                                     </div>
                                 </div>
                                 <div class="title__panel title__panel--right">
@@ -151,7 +151,7 @@
                                         </p>
                                     </div>
                                     <div class="view-more">
-                                        <a class="link" href="<?php home_url(); ?>/concept">More View</a>
+                                        <a class="link" href="<?php home_url(); ?>/bridal">More View</a>
                                     </div>
                                 </div>
                             </div>
@@ -296,11 +296,12 @@
                 <p class="shop-name">flower atelier hona hana<span>Atelier</span></p>
                 <p class="shop-info">〒596-0811<br class="pc tb">大阪府岸和田市下池田町1-10-18</p>
                 <div class="view-more">
-                    <a class="link" href="<?php home_url(); ?>/about">More View</a>
+                    <a class="link" href="<?php home_url(); ?>/access">More View</a>
                 </div>
             </div>
             <div class="section-content">
-                
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3289.350819207694!2d135.4010975155278!3d34.46862360311922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000c5ca3af9402b%3A0xa08a3f656cd2c45d!2sflower%20atelier%20honahana!5e0!3m2!1sja!2sjp!4v1618232819566!5m2!1sja!2sjp"
+                    width="100%" height="100%" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </section>
     </div>

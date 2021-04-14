@@ -9,7 +9,7 @@
                     <span class="service2">Bridal Flower</span>
                     <span class="service3">Frame Flower Art</span>
                 </p>
-                <a class="follow-me" href="https://instagram.com/honahana"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/followme.svg"></a>
+                <a class="follow-me" href="https://instagram.com/honahanaflower" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/followme.svg"></a>
                 <a class="scroll"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/scroll.svg"></a>
             </div>
             <div class="hero-carousel">
@@ -81,7 +81,7 @@
                                         </p>
                                     </div>
                                     <div class="view-more">
-                                        <a class="link" href="<?php home_url(); ?>/concept">More View</a>
+                                        <a class="link" href="<?php home_url(); ?>/arrange">More View</a>
                                     </div>
                                 </div>
                                 <div class="title__panel title__panel--right">
@@ -151,7 +151,7 @@
                                         </p>
                                     </div>
                                     <div class="view-more">
-                                        <a class="link" href="<?php home_url(); ?>/concept">More View</a>
+                                        <a class="link" href="<?php home_url(); ?>/bridal">More View</a>
                                     </div>
                                 </div>
                             </div>
@@ -296,7 +296,7 @@
                 <p class="shop-name">flower atelier hona hana<span>Atelier</span></p>
                 <p class="shop-info">〒596-0811<br class="pc tb">大阪府岸和田市下池田町1-10-18</p>
                 <div class="view-more">
-                    <a class="link" href="<?php home_url(); ?>/about">More View</a>
+                    <a class="link" href="<?php home_url(); ?>/access">More View</a>
                 </div>
             </div>
             <div class="section-content">
