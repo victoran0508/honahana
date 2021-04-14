@@ -170,18 +170,24 @@
             <div class="section-content">
                 <div class="news">
                     <div class="news-list">
-                        <div class="item">
-                            <div class="datetime">2021.03.05</div>
-                            <div class="news-title"><a href="#">ここに文字が入ります。ここにテキストが入ります。ここに文字が入ります。ここにテキストが入ります。</a></div>
-                        </div>
-                        <div class="item">
-                            <div class="datetime">2021.03.05</div>
-                            <div class="news-title"><a href="#">ここに文字が入ります。ここにテキストが入ります。ここに文字が入ります。ここにテキストが入ります。</a></div>
-                        </div>
-                        <div class="item">
-                            <div class="datetime">2021.03.05</div>
-                            <div class="news-title"><a href="#">ここに文字が入ります。ここにテキストが入ります。ここに文字が入ります。ここにテキストが入ります。</a></div>
-                        </div>
+                    <?php
+                        $query = new WP_Query( array(
+                            'post_type' => 'news',
+                            'posts_per_page' => 3,
+                        ) );
+                    
+                        if ($query->have_posts()) {
+                            while ($query->have_posts() ) : $query->the_post();
+                    ?>
+                            <div class="item">
+                                <div class="datetime"><?php the_time('Y.m.d'); ?></div>
+                                <div class="news-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
+                            </div>
+                    <?php
+                            endwhile;
+                            wp_reset_query();
+                        }
+                    ?>
                     </div>
                     <div class="view-more">
                         <a class="link" href="<?php home_url(); ?>/news">All View</a>

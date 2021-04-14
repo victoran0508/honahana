@@ -51,6 +51,10 @@
 			color: $color-gray1;
 		}
 
+		.nav > li:not(:last-of-type):after {
+			background-color: $color-gray1;
+		}
+
 		.logo {
 			img {
 				filter: invert(0.9);
@@ -63,6 +67,10 @@
 
 		&.header-sticky {
 			color: $color-white;
+			.nav > li:not(:last-of-type):after {
+				background-color: $color-white;
+			}
+
 			a {
 				color: $color-white;
 			}

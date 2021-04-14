@@ -170,18 +170,24 @@
             <div class="section-content">
                 <div class="news">
                     <div class="news-list">
-                        <div class="item">
-                            <div class="datetime">2021.03.05</div>
-                            <div class="news-title"><a href="#">ここに文字が入ります。ここにテキストが入ります。ここに文字が入ります。ここにテキストが入ります。</a></div>
-                        </div>
-                        <div class="item">
-                            <div class="datetime">2021.03.05</div>
-                            <div class="news-title"><a href="#">ここに文字が入ります。ここにテキストが入ります。ここに文字が入ります。ここにテキストが入ります。</a></div>
-                        </div>
-                        <div class="item">
-                            <div class="datetime">2021.03.05</div>
-                            <div class="news-title"><a href="#">ここに文字が入ります。ここにテキストが入ります。ここに文字が入ります。ここにテキストが入ります。</a></div>
-                        </div>
+                    <?php
+                        $query = new WP_Query( array(
+                            'post_type' => 'news',
+                            'posts_per_page' => 3,
+                        ) );
+                    
+                        if ($query->have_posts()) {
+                            while ($query->have_posts() ) : $query->the_post();
+                    ?>
+                            <div class="item">
+                                <div class="datetime"><?php the_time('Y.m.d'); ?></div>
+                                <div class="news-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
+                            </div>
+                    <?php
+                            endwhile;
+                            wp_reset_query();
+                        }
+                    ?>
                     </div>
                     <div class="view-more">
                         <a class="link" href="<?php home_url(); ?>/news">All View</a>
@@ -294,7 +300,8 @@
                 </div>
             </div>
             <div class="section-content">
-                
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3289.350819207694!2d135.4010975155278!3d34.46862360311922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000c5ca3af9402b%3A0xa08a3f656cd2c45d!2sflower%20atelier%20honahana!5e0!3m2!1sja!2sjp!4v1618232819566!5m2!1sja!2sjp"
+                    width="100%" height="100%" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </section>
     </div>
