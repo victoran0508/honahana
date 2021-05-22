@@ -22,7 +22,7 @@
                         </figure>
                         <time class="news-item__datetime"><?php the_time('Y.m.d'); ?></time>
                         <h4 class="news-item__title"><?php the_title(); ?></h4>
-                        <div class="news-item__details"><?php the_content(); ?></div>
+                        <div class="news-item__details"><?php echo strip_tags(get_the_content()); ?></div>
                         <div class="news-item__view-detail view-more">
                             <a class="link" href="<?php the_permalink(); ?>">More View</a>
                         </div>
